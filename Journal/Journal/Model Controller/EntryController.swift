@@ -9,7 +9,7 @@
 import Foundation
 
 class EntryController {
-    private(set) var entries: [Entry] = []
+    var entries: [Entry] = []
     private let baseURL = URL(string: "https://journal-88656.firebaseio.com/")!
     
     func put(entry:Entry, completion: @escaping (Error?) -> Void) {
@@ -22,7 +22,7 @@ class EntryController {
         
         do {
             let jsonEncoder = JSONEncoder()
-             entryData = try jsonEncoder.encode(entry)
+            entryData = try jsonEncoder.encode(entry)
         } catch {
             NSLog("Unable to encode entry data: \(error)")
             completion(error)
@@ -37,7 +37,7 @@ class EntryController {
                 return
             }
             completion(nil)
-        }.resume()
+            }.resume()
     }
     
     func createEntry(withTitle title: String, andText text: String, completion: @escaping (Error?) -> Void) {
@@ -72,7 +72,7 @@ class EntryController {
             let jsonDecoder = JSONDecoder()
             
             do {
-               let entries = try jsonDecoder.decode([String: Entry].self, from: data).values
+                let entries = try jsonDecoder.decode([String: Entry].self, from: data).values
                 self.entries = Array(entries).sorted(by: { $0.title < $1.title })
                 completion(nil) // ALWAYS REMEMBER to call completion on successfull decoding!
             } catch {
@@ -81,7 +81,20 @@ class EntryController {
                 completion(error)
                 
             }
-        }.resume()
+            }.resume()
         
+    }
+    
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathComponent(entry.identifier).appendingPathExtension("json")
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error deleting entry from the database: \(error)")
+            }
+        }.resume()
+        completion(nil)
     }
 }
