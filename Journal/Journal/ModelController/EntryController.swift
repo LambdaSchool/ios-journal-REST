@@ -76,7 +76,7 @@ class EntryController
             do {
                 let jsonDecoder = JSONDecoder()
                 let entriesDictionaries = try jsonDecoder.decode([String: Entry].self, from: data)
-                let entries = entriesDictionaries.map({ $0.value })
+                let entries = entriesDictionaries.map({ $0.value }).sorted{ $0.timeStamp < $1.timeStamp }
                 
                 self.entries = entries
                 
