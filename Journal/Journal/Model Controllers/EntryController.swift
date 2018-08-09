@@ -71,7 +71,7 @@ class EntryController {
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                NSLog("Error saving entry to server: \(error)")
+                NSLog("Error retrieving entries from server: \(error)")
                 DispatchQueue.main.async {
                     completion(error)
                 }
@@ -91,6 +91,7 @@ class EntryController {
                 
                 DispatchQueue.main.async {
                     self.entries = sortedDecodedEntries
+                    completion(nil)
                 }
             } catch {
                 NSLog("Error decoding received data: \(error)")
@@ -99,7 +100,52 @@ class EntryController {
                 }
                 return
             }
-        }
+        }.resume()
+    }
+    
+    func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        
+        var entry = entries[index]
+        entry.title = title
+        entry.bodyText = bodyText
+        
+        entries.remove(at: index)
+        entries.insert(entry, at: index)
+        
+        put(entry: entry, completion: completion)
+    }
+    
+    // Delete
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+//        guard let index = entries.index(of: entry)  else { return }
+//        entries.remove(at: index)
+        
+        let url = EntryController.baseURL.appendingPathComponent(entry.identifier).appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            // Don't care about the data, just want to delete
+            if let error = error {
+                NSLog("Error deleting entry from server: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                guard let index = self.entries.index(of: entry) else {
+                    NSLog("Something happened to the entry")
+                    completion(NSError())
+                    return
+                }
+                
+                self.entries.remove(at: index)
+                completion(nil)
+            }
+        }.resume()
     }
  }
 
