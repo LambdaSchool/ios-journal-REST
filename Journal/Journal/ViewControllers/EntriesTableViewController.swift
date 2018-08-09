@@ -15,6 +15,24 @@ class EntriesTableViewController: UITableViewController
     let entryController = EntryController()
     
     
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+        
+        entryController.fetchEntries { (error) in
+            if let error = error
+            {
+                NSLog("problem \(error)")
+                return
+                
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

@@ -16,15 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let entryController = EntryController()
-        entryController.createEntry(title: "hello", bodyText: "hiya", timeStamp: Date(), identifier: UUID().uuidString) { (error) in
-            if let error = error
-            {
-                NSLog("problem \(error)")
-                return
-                
-            }
-        }
+//        let entryController = EntryController()
+//        entryController.createEntry(title: "hello", bodyText: "hiya") { (error) in
+//            if let error = error
+//            {
+//                NSLog("problem \(error)")
+//                return
+//                
+//            }
+//        }
         
         // Override point for customization after application launch.
         return true

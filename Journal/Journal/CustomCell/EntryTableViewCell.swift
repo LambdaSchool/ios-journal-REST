@@ -29,13 +29,6 @@ class EntryTableViewCell: UITableViewCell
     
     // MARK: - Functions
     
-    func getReadableDate(timeStamp: TimeInterval) -> String? {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        return dateFormatter.string(from: date)
-    }
     func updateViews()
     {
         guard let entry = entry else {return}
@@ -43,9 +36,8 @@ class EntryTableViewCell: UITableViewCell
         let currentDate = entry.timeStamp
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "MM/dd/yy, h:mm a"
         let dateString = dateFormatter.string(from: currentDate)
-        print(dateString)
         
         titleLabel.text = entry.title
         dateLabel.text = dateString

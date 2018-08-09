@@ -56,15 +56,62 @@ class EntryController
     
     // MARK: - CRUD
     
-    func createEntry(title: String, bodyText: String, timeStamp: Date, identifier:String, completion: @escaping (Error?) -> Void)
+    func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void)
     {
-        let entry = Entry(title: title, bodyText: bodyText, timeStamp: timeStamp, identifier: identifier)
+        let entry = Entry(title: title, bodyText: bodyText)
         put(entry: entry, completion: completion)
     }
     
+    func updateEntry(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void)
+    {
+        if let index = entries.index(of: entry)
+        {
+            var tempEntry = entry
+            tempEntry.title = title
+            tempEntry.bodyText = bodyText
+            
+            entries.remove(at: index)
+            entries.insert(tempEntry, at: index)
+            put(entry: tempEntry, completion: completion)
+        }
+    }
     
-    
-    
+    func fetchEntries(completion: @escaping (Error?) -> Void)
+    {
+        let url = baseURL.appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error
+            {
+                NSLog("error \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                let entriesDictionaries = try jsonDecoder.decode([String: Entry].self, from: data)
+                let entries = entriesDictionaries.map({ $0.value })
+                
+                self.entries = entries
+                
+                //completion(nil)
+            } catch {
+                NSLog("error \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+            }.resume()
+    }
     
     
     

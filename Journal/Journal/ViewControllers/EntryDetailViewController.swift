@@ -33,19 +33,36 @@ class EntryDetailViewController: UIViewController
     @IBAction func save(_ sender: Any)
     {
         guard let title = titleTextField.text,
-            let bodyText = storyTextView.text,
-        let entry = self.entry
-            else {return}
+        let bodyText = storyTextView.text else {return}
+        if let entry = self.entry
+        {
+            entryController?.updateEntry(entry: entry, title: title, bodyText: bodyText, completion: { (error) in
+                if let error = error
+                {
+                    NSLog("There was an error while trying to update, Swift says: \(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
+        else
+        {
+            entryController?.createEntry(title: title, bodyText: bodyText, completion: { (error) in
+                if let error = error
+                {
+                    NSLog("problem \(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
         
-        entryController?.createEntry(title: title, bodyText: bodyText, timeStamp: entry.timeStamp, identifier: entry.identifier, completion: { (error) in
-            if let error = error
-            {
-                NSLog("problem \(error)")
-                return
-                
-            }
-        })
-        navigationController?.popViewController(animated: true)
+        
+        
     }
     
     
