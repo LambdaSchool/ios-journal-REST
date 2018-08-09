@@ -62,7 +62,16 @@ class EntriesTableViewController: UITableViewController
     {
         if editingStyle == .delete
         {
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let entry = entryController.entries[indexPath.row]
+            entryController.deleteEntry(entry: entry) { (error) in
+                if let error = error
+                {
+                    NSLog("problem \(error)")
+                    return
+                }
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
         }
     }
     
@@ -72,8 +81,17 @@ class EntriesTableViewController: UITableViewController
     {
         if segue.identifier == "ShowAddView"
         {
-            guard let detailView = segue.destination as? EntryDetailViewController else {return}
-            detailView.entryController = entryController
+            guard let addView = segue.destination as? EntryDetailViewController else {return}
+            addView.entryController = entryController
+        }
+        else if segue.identifier == "ShowEditView"
+        {
+            guard let editView = segue.destination as? EntryDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else {return}
+            editView.entryController = entryController
+            editView.entry = entryController.entries[indexPath.row]
+            
+            
         }
     }
     

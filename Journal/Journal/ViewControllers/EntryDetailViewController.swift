@@ -18,15 +18,35 @@ class EntryDetailViewController: UIViewController
     // MARK: - Properties
     
     var entry: Entry?
+    {
+        didSet
+        {
+            updateViews()
+        }
+    }
     var entryController: EntryController?
+    
     
     // MARK: - View Setup
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        updateViews()
     }
 
+    private func updateViews()
+    {
+        guard let entry = entry else {
+            title = "Create Entry"
+            return
+        }
+        title = entry.title
+        titleTextField?.text = entry.title
+        storyTextView?.text = entry.bodyText
+    }
+    
     
     // MARK: - Button Actions
     
@@ -60,9 +80,6 @@ class EntryDetailViewController: UIViewController
                 }
             })
         }
-        
-        
-        
     }
     
     
