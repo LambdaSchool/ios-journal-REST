@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Journal/ViewControllers/EntryDetailViewController.swift"
+            timestampString = "555538368.111255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Journal.EntryDetailViewController.save(Any) -&gt; ()"
+                  moduleName = "Journal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carolynlea/Desktop/lambdaProjects/ios-journal-REST/Journal/Journal/ViewControllers/EntryDetailViewController.swift"
+                  timestampString = "555538368.2391731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1372">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Journal.EntryDetailViewController.save(Any) -&gt; ()"
+                  moduleName = "Journal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carolynlea/Desktop/lambdaProjects/ios-journal-REST/Journal/Journal/ViewControllers/EntryDetailViewController.swift"
+                  timestampString = "555538368.242313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -15,6 +15,10 @@ class EntryDetailViewController: UIViewController
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var storyTextView: UITextView!
     
+    // MARK: - Properties
+    
+    var entry: Entry?
+    var entryController: EntryController?
     
     // MARK: - View Setup
     
@@ -28,6 +32,31 @@ class EntryDetailViewController: UIViewController
     
     @IBAction func save(_ sender: Any)
     {
+        guard let title = titleTextField.text,
+            let bodyText = storyTextView.text,
+        let entry = self.entry
+            else {return}
         
+        entryController?.createEntry(title: title, bodyText: bodyText, timeStamp: entry.timeStamp, identifier: entry.identifier, completion: { (error) in
+            if let error = error
+            {
+                NSLog("problem \(error)")
+                return
+                
+            }
+        })
+        navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
