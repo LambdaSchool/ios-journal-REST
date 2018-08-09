@@ -9,15 +9,21 @@
 import UIKit
 
 class EntriesTableViewController: UITableViewController {
+    
+    let entryController = EntryController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Mock entry to show on the database for testing
+        entryController.createEntry(withTitle: "TEst5", bodyText: "messagebroken") { (error) in
+            if let error = error {
+                NSLog("Error creating entry: \(error)")
+                return
+            }
+            
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {

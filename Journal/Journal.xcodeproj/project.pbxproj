@@ -14,6 +14,8 @@
 		39C8C8C7211CB98100ED7719 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8C8C6211CB98100ED7719 /* EntriesTableViewController.swift */; };
 		39C8C8C9211CBB3E00ED7719 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8C8C8211CBB3E00ED7719 /* EntryTableViewCell.swift */; };
 		39C8C8CC211CBC9F00ED7719 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8C8CB211CBC9F00ED7719 /* EntryDetailViewController.swift */; };
+		39C8C8CE211CBDE700ED7719 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8C8CD211CBDE700ED7719 /* Entry.swift */; };
+		39C8C8D1211CBF6300ED7719 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8C8D0211CBF6300ED7719 /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		39C8C8C6211CB98100ED7719 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		39C8C8C8211CBB3E00ED7719 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		39C8C8CB211CBC9F00ED7719 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		39C8C8CD211CBDE700ED7719 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		39C8C8D0211CBF6300ED7719 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				39C8C8B2211CA02D00ED7719 /* AppDelegate.swift */,
+				39C8C8CF211CBDED00ED7719 /* Model */,
+				39C8C8D2211CBF6600ED7719 /* Model Controllers */,
 				39C8C8CA211CBB4100ED7719 /* Views */,
 				39C8C8C5211CB2CF00ED7719 /* View Controllers */,
 				39C8C8C4211CB2C600ED7719 /* Storyboards */,
@@ -92,6 +98,22 @@
 				39C8C8C8211CBB3E00ED7719 /* EntryTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		39C8C8CF211CBDED00ED7719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39C8C8CD211CBDE700ED7719 /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39C8C8D2211CBF6600ED7719 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39C8C8D0211CBF6300ED7719 /* EntryController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C8C8D1211CBF6300ED7719 /* EntryController.swift in Sources */,
+				39C8C8CE211CBDE700ED7719 /* Entry.swift in Sources */,
 				39C8C8C9211CBB3E00ED7719 /* EntryTableViewCell.swift in Sources */,
 				39C8C8C7211CB98100ED7719 /* EntriesTableViewController.swift in Sources */,
 				39C8C8CC211CBC9F00ED7719 /* EntryDetailViewController.swift in Sources */,
