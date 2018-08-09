@@ -12,7 +12,9 @@ private let baseURL = URL(string: "https://journal-d5c9d.firebaseio.com/")!
 
 class EntryController {
     
-    private(set) var entries : [Entry] = []
+    private(set) var entries: [Entry] = []
+    
+    var entry: Entry!
     
     func put(entry: Entry, completion: @escaping (Error?) -> Void) {
         
@@ -54,10 +56,55 @@ class EntryController {
                 return
             }
             completion(nil)
+            print(entry)
         }
         
     }
     
+    func updateEntry(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        
+        var update = Entry(title: title, bodyText: bodyText, timestamp: entry.timestamp, identifier: entry.identifier)
+        
+        update.title = entry.title
+        update.bodyText = entry.bodyText
+        update.timestamp = entry.timestamp
+        update.identifier = entry.identifier
+    }
+    
+    func fetchEntries(completion: @escaping (Error?) -> Void) {
+        
+        let url = baseURL
+            .appendingPathComponent(entry.identifier)
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error: \(error)")
+                completion(error)
+                return
+            }
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            do {
+                let entries = try JSONDecoder().decode([String: [String: Entry]].self, from: data).values
+                let entry = entries.flatMap({$0.values})
+                
+                self.entries = entry
+                
+            } catch {
+                NSLog("Error: \(error)")
+            }
+            completion(nil)
+            
+        }.resume()
+        
+        
+    }
     
     
     

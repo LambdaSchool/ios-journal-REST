@@ -12,7 +12,7 @@ struct Entry: Equatable, Codable {
     var title: String
     var bodyText: String
     var timestamp: Date
-    let identifier: String
+    var identifier: String
     
     init(title: String, bodyText: String, timestamp: Date, identifier: String) {
         
