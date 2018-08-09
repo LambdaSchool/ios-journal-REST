@@ -62,11 +62,10 @@
 		DE69502E211CA8A500EF7D77 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				DE695042211CA8E700EF7D77 /* EntryTableViewCell.swift */,
-				DE695044211CA8F100EF7D77 /* Entry.swift */,
-				DE695046211CA8FF00EF7D77 /* EntryController.swift */,
-				DE695048211CA90C00EF7D77 /* EntriesTableViewController.swift */,
-				DE695049211CA90C00EF7D77 /* EntryDetailViewController.swift */,
+				DE69504C211CAF7800EF7D77 /* CustomCell */,
+				DE69504D211CAF8700EF7D77 /* Model */,
+				DE69504E211CAF9300EF7D77 /* ModelController */,
+				DE69504F211CAFA600EF7D77 /* ViewControllers */,
 				DE695041211CA8BC00EF7D77 /* Resources */,
 			);
 			path = Journal;
@@ -82,6 +81,39 @@
 				DE69503B211CA8A600EF7D77 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE69504C211CAF7800EF7D77 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE695042211CA8E700EF7D77 /* EntryTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		DE69504D211CAF8700EF7D77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE695044211CA8F100EF7D77 /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE69504E211CAF9300EF7D77 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				DE695046211CA8FF00EF7D77 /* EntryController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		DE69504F211CAFA600EF7D77 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE695048211CA90C00EF7D77 /* EntriesTableViewController.swift */,
+				DE695049211CA90C00EF7D77 /* EntryDetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
