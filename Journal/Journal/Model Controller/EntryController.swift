@@ -72,8 +72,9 @@ class EntryController {
             let jsonDecoder = JSONDecoder()
             
             do {
-              let entries = try jsonDecoder.decode([Entry].self, from: data)
+               let entries = try jsonDecoder.decode([String: Entry].self, from: data).values
                 self.entries = Array(entries).sorted(by: { $0.title < $1.title })
+                completion(nil) // ALWAYS REMEMBER to call completion on successfull decoding!
             } catch {
                 NSLog("Unable to decode data into [Entry]: \(error)")
                 self.entries = []

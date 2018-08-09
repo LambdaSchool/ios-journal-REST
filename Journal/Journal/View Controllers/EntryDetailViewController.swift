@@ -13,9 +13,9 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
     
+    var entry: Entry?
+    var entryController: EntryController?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
