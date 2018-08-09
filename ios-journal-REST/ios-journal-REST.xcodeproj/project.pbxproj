@@ -15,6 +15,7 @@
 		051E4223211CA607008BFAE6 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4222211CA607008BFAE6 /* EntryTableViewCell.swift */; };
 		051E4225211CAC20008BFAE6 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4224211CAC20008BFAE6 /* EntryDetailViewController.swift */; };
 		051E4227211CB042008BFAE6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4226211CB042008BFAE6 /* Entry.swift */; };
+		051E422A211CB2FC008BFAE6 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4229211CB2FC008BFAE6 /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		051E4222211CA607008BFAE6 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		051E4224211CAC20008BFAE6 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		051E4226211CB042008BFAE6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		051E4229211CB2FC008BFAE6 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				051E420B211CA208008BFAE6 /* AppDelegate.swift */,
 				051E420F211CA208008BFAE6 /* Main.storyboard */,
 				051E4221211CA510008BFAE6 /* Models */,
+				051E4228211CB2AE008BFAE6 /* Model Controller */,
 				051E4220211CA50A008BFAE6 /* Views */,
 				051E421F211CA503008BFAE6 /* Controllers */,
 				051E4217211CA20A008BFAE6 /* Info.plist */,
@@ -95,6 +98,14 @@
 				051E4226211CB042008BFAE6 /* Entry.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		051E4228211CB2AE008BFAE6 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				051E4229211CB2FC008BFAE6 /* EntryController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051E422A211CB2FC008BFAE6 /* EntryController.swift in Sources */,
 				051E4227211CB042008BFAE6 /* Entry.swift in Sources */,
 				051E4223211CA607008BFAE6 /* EntryTableViewCell.swift in Sources */,
 				051E421E211CA4FF008BFAE6 /* EntriesTableViewController.swift in Sources */,
