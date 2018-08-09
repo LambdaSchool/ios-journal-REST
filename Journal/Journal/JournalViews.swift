@@ -60,6 +60,15 @@ class EntryListTVC:UITableViewController
 		return cell
 	}
 
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			// the item gets deleted synchronously from the array
+			// so we can just reload the row as soon as we return
+			controller.delete(controller.entries[indexPath.row]) {(error) in}
+			tableView.deleteRows(at: [indexPath], with: .left)
+		}
+	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let dest = segue.destination as? NewEntryVC {
 			dest.entryList = self

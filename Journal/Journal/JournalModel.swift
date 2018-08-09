@@ -147,4 +147,19 @@ class JournalController
 			}
 		}.resume()
 	}
+
+	func delete(_ e:JournalEntry, _ completion: @escaping CompletionHandler)
+	{
+		guard let index = entries.index(of:e) else {return}
+		entries.remove(at: index)
+		let req = buildRequest([e.identifier], "DELETE")
+		URLSession.shared.dataTask(with: req) { (data, _, error) in
+			if let error = error {
+				NSLog("Error deleting: \(error)")
+				completion("Error deleting")
+				return
+			}
+			completion(nil)
+		}.resume()
+	}
 }
