@@ -14,6 +14,7 @@
 		051E421E211CA4FF008BFAE6 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E421D211CA4FF008BFAE6 /* EntriesTableViewController.swift */; };
 		051E4223211CA607008BFAE6 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4222211CA607008BFAE6 /* EntryTableViewCell.swift */; };
 		051E4225211CAC20008BFAE6 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4224211CAC20008BFAE6 /* EntryDetailViewController.swift */; };
+		051E4227211CB042008BFAE6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E4226211CB042008BFAE6 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		051E421D211CA4FF008BFAE6 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		051E4222211CA607008BFAE6 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		051E4224211CAC20008BFAE6 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		051E4226211CB042008BFAE6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		051E4221211CA510008BFAE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				051E4226211CB042008BFAE6 /* Entry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051E4227211CB042008BFAE6 /* Entry.swift in Sources */,
 				051E4223211CA607008BFAE6 /* EntryTableViewCell.swift in Sources */,
 				051E421E211CA4FF008BFAE6 /* EntriesTableViewController.swift in Sources */,
 				051E4225211CAC20008BFAE6 /* EntryDetailViewController.swift in Sources */,
