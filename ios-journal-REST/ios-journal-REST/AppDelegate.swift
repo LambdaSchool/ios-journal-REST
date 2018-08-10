@@ -16,15 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        let entryController = EntryController()
-//
-//        entryController.createEntry(title: "Bonjour", bodyText: "Le midi est plus déténte.", timestamp: Date(), identifier: UUID().uuidString) { (error) in
-//            if let error = error {
-//                NSLog("Error: \(error)")
-//            }
-//        }
-//
-        
         return true
     }
 

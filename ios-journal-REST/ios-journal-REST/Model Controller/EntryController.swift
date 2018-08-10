@@ -14,8 +14,6 @@ class EntryController {
     
     private(set) var entries: [Entry] = []
     
-    var entry: Entry!
-    
     func put(entry: Entry, completion: @escaping (Error?) -> Void) {
         
         let url = baseURL
@@ -45,9 +43,9 @@ class EntryController {
         
     }
     
-    func createEntry(title: String, bodyText: String, timestamp: Date, identifier: String, completion: @escaping (Error?) -> Void) {
+    func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         
-        let entry = Entry(title: title, bodyText: bodyText, timestamp: timestamp, identifier: identifier)
+        let entry = Entry(title: title, bodyText: bodyText)
         
         put(entry: entry) { (error) in
             if let error = error {
@@ -63,18 +61,21 @@ class EntryController {
     
     func updateEntry(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         
-        var update = Entry(title: title, bodyText: bodyText, timestamp: entry.timestamp, identifier: entry.identifier)
+        var update = Entry(title: title, bodyText: bodyText)
         
-        update.title = entry.title
-        update.bodyText = entry.bodyText
         update.timestamp = entry.timestamp
         update.identifier = entry.identifier
+        
+        guard let index = self.entries.index(of: entry) else { return }
+        
+        self.entries[index] = update
+        self.put(entry: update, completion: completion)
+        
     }
     
     func fetchEntries(completion: @escaping (Error?) -> Void) {
         
         let url = baseURL
-            .appendingPathComponent(entry.identifier)
             .appendingPathExtension("json")
         
         var request = URLRequest(url: url)
@@ -91,8 +92,9 @@ class EntryController {
                 return
             }
             do {
-                let entries = try JSONDecoder().decode([String: [String: Entry]].self, from: data).values
-                let entry = entries.flatMap({$0.values})
+                let entries = try JSONDecoder().decode([String : Entry].self, from: data)
+                
+                let entry = entries.map({$0.value})
                 
                 self.entries = entry
                 
@@ -106,8 +108,29 @@ class EntryController {
         
     }
     
-    
-    
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        
+        guard let index = self.entries.index(of: entry) else { return }
+        
+        self.entries.remove(at: index)
+        
+        let url = baseURL
+            .appendingPathComponent(entry.identifier)
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error: \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+        }.resume()
+    }
     
     
     

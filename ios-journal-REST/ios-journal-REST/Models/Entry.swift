@@ -9,12 +9,18 @@
 import Foundation
 
 struct Entry: Equatable, Codable {
+    
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        
+        return lhs.identifier == rhs.identifier
+    }
+    
     var title: String
     var bodyText: String
     var timestamp: Date
     var identifier: String
     
-    init(title: String, bodyText: String, timestamp: Date, identifier: String) {
+    init(title: String, bodyText: String) {
         
         self.title = title
         self.bodyText = bodyText
