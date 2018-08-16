@@ -30,6 +30,9 @@ class EntryDetailViewController: UIViewController {
     }
     */
     
+    var entry: Entry?
+    var entryController: EntryController?
+    
     @IBOutlet weak var entryTitleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     
