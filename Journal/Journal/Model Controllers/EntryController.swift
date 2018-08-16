@@ -53,6 +53,32 @@ class EntryController {
         put(entry: entry, completion: completion)
     }
     
+    func delete(entry: Entry, completion: @escaping RequestCompletion) {
+        let url = EntryController.baseURL.appendingPathComponent(entry.identifier).appendingPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error: \(error)")
+                completion(false)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                guard let index = self.entries.index(of: entry) else {
+                    NSLog("Can't find entry.")
+                    completion(false)
+                    return
+                }
+                
+                self.entries.remove(at: index)
+                completion(true)
+            }
+            }.resume()
+    }
+    
     func fetchEntries(completion: @escaping RequestCompletion) {
         let url = EntryController.baseURL.appendingPathExtension("json")
         
