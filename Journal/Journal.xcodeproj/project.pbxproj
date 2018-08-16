@@ -14,6 +14,7 @@
 		FF10CD1D2125DFBD007AC657 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10CD1C2125DFBD007AC657 /* EntriesTableViewController.swift */; };
 		FF10CD1F2125E04B007AC657 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10CD1E2125E04B007AC657 /* EntryTableViewCell.swift */; };
 		FF10CD212125E2EB007AC657 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10CD202125E2EB007AC657 /* EntryDetailViewController.swift */; };
+		FF10CD232125E420007AC657 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10CD222125E420007AC657 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FF10CD1C2125DFBD007AC657 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		FF10CD1E2125E04B007AC657 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		FF10CD202125E2EB007AC657 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		FF10CD222125E420007AC657 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		FF10CD1A2125DC00007AC657 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF10CD222125E420007AC657 /* Entry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF10CD232125E420007AC657 /* Entry.swift in Sources */,
 				FF10CD1F2125E04B007AC657 /* EntryTableViewCell.swift in Sources */,
 				FF10CD1D2125DFBD007AC657 /* EntriesTableViewController.swift in Sources */,
 				FF10CD212125E2EB007AC657 /* EntryDetailViewController.swift in Sources */,
