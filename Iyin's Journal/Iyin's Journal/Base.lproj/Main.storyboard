@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showDetail" rowHeight="123" id="tnb-lA-Ax2" customClass="EntryTableViewCell" customModule="Iyin_s_Journal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="123" id="tnb-lA-Ax2" customClass="EntryTableViewCell" customModule="Iyin_s_Journal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tnb-lA-Ax2" id="ByX-F6-fPl">
@@ -53,7 +53,7 @@
                                     <outlet property="bodytextLabel" destination="b3u-9X-xnW" id="sjr-aa-szo"/>
                                     <outlet property="timestampLabel" destination="hDc-x4-Ctp" id="mE3-c0-Ctq"/>
                                     <outlet property="titleLabel" destination="edY-7q-NjF" id="7uV-Wa-lWo"/>
-                                    <segue destination="22B-UP-gjy" kind="show" id="IhA-tg-RUm"/>
+                                    <segue destination="22B-UP-gjy" kind="show" identifier="ShowDetail" id="IhA-tg-RUm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -136,6 +136,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9CF-yn-GBf"/>
+        <segue reference="IhA-tg-RUm"/>
     </inferredMetricsTieBreakers>
 </document>

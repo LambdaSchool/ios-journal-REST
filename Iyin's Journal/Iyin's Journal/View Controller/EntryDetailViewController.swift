@@ -16,22 +16,47 @@ class EntryDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateViews(){
+        if !isViewLoaded { return }
+        
+        switch entry {
+        case nil:
+            self.title = "Create Entry"
+        default:
+            self.title = entry?.title
+            textField.text = entry?.title
+            entryTextView.text = entry?.bodytext
+        }
+        
+        
     }
-    */
+ 
+    
+    var entryController: EntryController?
+    var entry: Entry?
+  
     @IBAction func Send(_ sender: Any) {
+        guard let title = textField.text,
+            let bodyText = entryTextView.text else {return}
+        
+        if title == "" || bodyText == "" {return}
+        
+        if let entry = entry {
+            entryController?.updateEntry(entry: entry, title: title, bodyText: bodyText) {
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+                return nil }
+        } else {
+            entryController?.createEntry(title: title, bodyText: bodyText){
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+                return nil}
+        }
     }
     @IBOutlet weak var textField: UITextField!
     
