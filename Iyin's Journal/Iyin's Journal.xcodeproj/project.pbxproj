@@ -15,6 +15,7 @@
 		947E429F212606E20041C739 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E429E212606E20041C739 /* EntryTableViewCell.swift */; };
 		947E42A1212609780041C739 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E42A0212609780041C739 /* EntryDetailViewController.swift */; };
 		947E42A621260A010041C739 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E42A521260A010041C739 /* Entry.swift */; };
+		947E42A82126133E0041C739 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E42A72126133E0041C739 /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		947E429E212606E20041C739 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		947E42A0212609780041C739 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		947E42A521260A010041C739 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		947E42A72126133E0041C739 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		947E42A3212609920041C739 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				947E42A72126133E0041C739 /* EntryController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947E42A82126133E0041C739 /* EntryController.swift in Sources */,
 				947E42A621260A010041C739 /* Entry.swift in Sources */,
 				947E429F212606E20041C739 /* EntryTableViewCell.swift in Sources */,
 				947E429D212605990041C739 /* EntriesTableViewController.swift in Sources */,
