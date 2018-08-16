@@ -13,11 +13,34 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateViews()
+    }
+    
+    func updateViews() {
+        guard isViewLoaded else { return }
         
+        if let entry = entry {
+            navigationItem.title = entry.title
+            entryTitleTextField.text = entry.title
+            bodyTextView.text = entry.bodyText
+        } else {
+            navigationItem.title = "Create Entry"
+        }
     }
     
     @IBAction func saveEntryButtonTapped(_ sender: Any) {
+        guard let title = entryTitleTextField.text,
+            let bodyText = bodyTextView.text else { return }
         
+        if let entry = entry {
+            entryController?.update(entry: entry, title: title, bodyText: bodyText, completion: { (success) in
+                self.navigationController?.popViewController(animated: true)
+            })
+        } else {
+            entryController?.createEntry(title: title, bodyText: bodyText, completion: { (success) in
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
     
     /*
@@ -30,7 +53,11 @@ class EntryDetailViewController: UIViewController {
     }
     */
     
-    var entry: Entry?
+    var entry: Entry? {
+        didSet {
+            updateViews()
+        }
+    }
     var entryController: EntryController?
     
     @IBOutlet weak var entryTitleTextField: UITextField!
