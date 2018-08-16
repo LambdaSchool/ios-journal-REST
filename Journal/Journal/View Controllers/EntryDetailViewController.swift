@@ -34,11 +34,15 @@ class EntryDetailViewController: UIViewController {
         
         if let entry = entry {
             entryController?.update(entry: entry, title: title, bodyText: bodyText, completion: { (success) in
-                self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             })
         } else {
             entryController?.createEntry(title: title, bodyText: bodyText, completion: { (success) in
-                self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             })
         }
     }

@@ -27,19 +27,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-Mx-Z8f">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-Mx-Z8f">
+                                            <rect key="frame" x="16" y="11" width="293" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrq-wx-nlw">
-                                            <rect key="frame" x="16" y="40" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrq-wx-nlw">
+                                            <rect key="frame" x="16" y="40" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxE-v1-PaL">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxE-v1-PaL">
                                             <rect key="frame" x="317" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -49,9 +49,11 @@
                                     <constraints>
                                         <constraint firstItem="CxE-v1-PaL" firstAttribute="trailing" secondItem="hLT-aS-lOJ" secondAttribute="trailingMargin" id="0eJ-3h-moF"/>
                                         <constraint firstItem="Mrq-wx-nlw" firstAttribute="top" secondItem="B4s-Mx-Z8f" secondAttribute="bottom" constant="8" id="UXP-jB-S4g"/>
+                                        <constraint firstItem="CxE-v1-PaL" firstAttribute="leading" secondItem="B4s-Mx-Z8f" secondAttribute="trailing" constant="8" id="XI2-P8-OhE"/>
                                         <constraint firstItem="CxE-v1-PaL" firstAttribute="top" secondItem="hLT-aS-lOJ" secondAttribute="topMargin" id="YAo-yn-yu9"/>
                                         <constraint firstItem="B4s-Mx-Z8f" firstAttribute="leading" secondItem="hLT-aS-lOJ" secondAttribute="leadingMargin" id="dOw-cm-7ZL"/>
                                         <constraint firstItem="Mrq-wx-nlw" firstAttribute="bottom" secondItem="hLT-aS-lOJ" secondAttribute="bottomMargin" id="mzB-gz-6Ud"/>
+                                        <constraint firstItem="Mrq-wx-nlw" firstAttribute="trailing" secondItem="hLT-aS-lOJ" secondAttribute="trailingMargin" id="pge-fj-L9X"/>
                                         <constraint firstItem="Mrq-wx-nlw" firstAttribute="leading" secondItem="hLT-aS-lOJ" secondAttribute="leadingMargin" id="tvS-oA-QbG"/>
                                         <constraint firstItem="B4s-Mx-Z8f" firstAttribute="top" secondItem="hLT-aS-lOJ" secondAttribute="topMargin" id="xQT-M9-8hN"/>
                                     </constraints>

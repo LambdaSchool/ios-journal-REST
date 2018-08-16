@@ -48,9 +48,9 @@ class EntryController {
         scratch.bodyText = bodyText
         
         entries.remove(at: index)
-        entries.insert(entry, at: index)
+        entries.insert(scratch, at: index)
         
-        put(entry: entry, completion: completion)
+        put(entry: scratch, completion: completion)
     }
     
     func delete(entry: Entry, completion: @escaping RequestCompletion) {
