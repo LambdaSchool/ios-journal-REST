@@ -12,12 +12,12 @@ class EntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+//        entryController.createEntry(title: "Test 3", bodyText: "Lets try one more time.", completion: { (success) in
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,4 +92,6 @@ class EntriesTableViewController: UITableViewController {
     }
     */
 
+    let entryController = EntryController()
+    
 }
