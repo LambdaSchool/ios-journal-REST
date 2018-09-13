@@ -29,13 +29,25 @@ class EntryController {
         
         entries[index].title = title
         entries[index].bodyText = bodyText
+        entries[index].timestampUpdated = Date()
         
-        put(entry: entry, completion: completion)
+        put(entry: entries[index], completion: completion)
         
     }
     
+    func deleteEntry(_ entry: Entry, completion: @escaping (Error?) -> Void ) {
+        guard let index = entries.index(of: entry) else {
+            completion(NSError())
+            return
+        }
+        
+        entries.remove(at: index)
+        
+        delete(entry: entry, completion: completion)
+    }
+    
     // MARK: - Networking Methods
-    func put(entry: Entry, completion: @escaping (Error?) -> Void ) {
+    private func put(entry: Entry, completion: @escaping (Error?) -> Void ) {
         var requestURL = baseURL.appendingPathComponent(entry.identifier)
         requestURL.appendPathExtension("json")
         
@@ -68,6 +80,31 @@ class EntryController {
         }.resume()
     }
     
+    private func delete(entry: Entry, completion: @escaping (Error?) -> Void ) {
+        var requestURL = baseURL.appendingPathComponent(entry.identifier)
+        requestURL.appendPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error PUTting entry: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard data != nil else {
+                NSLog("No data was returned.")
+                completion(NSError())
+                return
+            }
+            
+            completion(nil)
+            
+            }.resume()
+    }
+    
     func fetchEntries(completion: @escaping (Error?) -> Void ) {
         let requestURL = baseURL.appendingPathExtension("json")
         
@@ -95,6 +132,6 @@ class EntryController {
                 completion(error)
                 return
             }
-        }
+        }.resume()
     }
 }

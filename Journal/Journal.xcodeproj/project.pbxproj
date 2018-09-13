@@ -96,9 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				34E131FC214AAF42007F26AF /* Main.storyboard */,
-				34760912214AF4320002AB8C /* EntryDetailViewController.swift */,
-				34760910214AF2F00002AB8C /* EntryTableViewCell.swift */,
 				34E1D7E1214AF142007C71F2 /* EntriesTableViewController.swift */,
+				34760910214AF2F00002AB8C /* EntryTableViewCell.swift */,
+				34760912214AF4320002AB8C /* EntryDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

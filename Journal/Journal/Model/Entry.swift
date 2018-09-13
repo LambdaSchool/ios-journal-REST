@@ -15,6 +15,14 @@ struct Entry: Codable, Equatable {
     var timestampUpdated: Date
     let identifier: String
     
+    var formattedTimestamp: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .medium
+        
+        return dateFormatter.string(from: timestampCreated)
+    }
+    
     init(title: String, bodyText: String) {
         self.title = title
         self.bodyText = bodyText
