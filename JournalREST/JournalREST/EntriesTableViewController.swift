@@ -36,13 +36,36 @@ class EntriesTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let entry = entryController.entries[indexPath.row]
+            
+            entryController.deleteEntry(entry: entry) { (_) in
+                self.entryController.entries.remove(at: indexPath.row)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddSegue" {
+            guard let destinationVC = segue.destination as? EntryDetailViewController else { return }
+            destinationVC.entryController = entryController
+            
+        } else if segue.identifier == "ShowSegue" {
+            guard let destinationVC = segue.destination as? EntryDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let entry = entryController.entries[indexPath.row]
+            destinationVC.entry = entry
+            destinationVC.entryController = entryController
+        }
     }
 
     var entryController = EntryController()
