@@ -12,6 +12,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Journals-->
+        <scene sceneID="lWo-uL-qRX">
+            <objects>
+                <tableViewController id="UvJ-W3-1CY" customClass="JournalsTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W3u-75-1q9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" id="Li4-Oo-ZU0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Li4-Oo-ZU0" id="cOA-oN-cMv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9YH-6R-FSh" kind="show" identifier="ShowJournalSegue" id="L2B-fx-2Zs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UvJ-W3-1CY" id="Eje-GX-8Bc"/>
+                            <outlet property="delegate" destination="UvJ-W3-1CY" id="6gD-Nw-fbc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Journals" id="DSY-R4-Y4B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="80h-Fy-t1d">
+                            <connections>
+                                <action selector="addJournal:" destination="UvJ-W3-1CY" id="bHg-oo-6BD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwo-tk-s6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463" y="180"/>
+        </scene>
         <!--Journal-->
         <scene sceneID="xeO-YO-BMh">
             <objects>
@@ -149,12 +187,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9YH-6R-FSh" kind="relationship" relationship="rootViewController" id="Koq-PI-c4s"/>
+                        <segue destination="UvJ-W3-1CY" kind="relationship" relationship="rootViewController" id="MKg-zJ-Nfo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Em3-Uo-Ohd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="182"/>
+            <point key="canvasLocation" x="-1433" y="181"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

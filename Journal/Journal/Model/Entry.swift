@@ -35,3 +35,41 @@ struct Entry: Codable, Equatable {
         self.identifier = UUID().uuidString
     }
 }
+
+class Journal: Codable, Equatable {
+    
+    // MARK: - Properties
+    var title: String
+    var identifier: String
+    var entries: [Entry]
+    
+    /// Computed property that returns a sorted array of entries with the most recently updated first.
+    var sortedEntries: [Entry] {
+        return entries.sorted() { $0.timestampUpdated > $1.timestampUpdated }
+    }
+    
+    // MARK: - Equatable
+    static func == (lhs: Journal, rhs: Journal) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    
+    // MARK: - Initializers
+    init (title: String) {
+        self.title = title
+        self.identifier = UUID().uuidString
+        self.entries = []
+    }
+    
+    required init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let title = try container.decode(String.self, forKey: .title)
+        let identifier = try container.decode(String.self, forKey: .identifier)
+        let entries = try container.decodeIfPresent([Entry].self, forKey: .entries)
+        
+        self.title = title
+        self.identifier = identifier
+        self.entries = entries ?? []
+    }
+}

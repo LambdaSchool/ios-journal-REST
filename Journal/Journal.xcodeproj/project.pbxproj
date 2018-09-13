@@ -10,8 +10,9 @@
 		34760911214AF2F00002AB8C /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760910214AF2F00002AB8C /* EntryTableViewCell.swift */; };
 		34760913214AF4320002AB8C /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760912214AF4320002AB8C /* EntryDetailViewController.swift */; };
 		34760915214AF4F00002AB8C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760914214AF4F00002AB8C /* Entry.swift */; };
-		34760918214AF64E0002AB8C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760917214AF64E0002AB8C /* EntryController.swift */; };
+		34760918214AF64E0002AB8C /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760917214AF64E0002AB8C /* JournalController.swift */; };
 		3476091A214AF7370002AB8C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34760919214AF7370002AB8C /* HTTPMethod.swift */; };
+		3476091C214B111B0002AB8C /* JournalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3476091B214B111B0002AB8C /* JournalsTableViewController.swift */; };
 		34E131F9214AAF42007F26AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E131F8214AAF42007F26AF /* AppDelegate.swift */; };
 		34E131FE214AAF42007F26AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E131FC214AAF42007F26AF /* Main.storyboard */; };
 		34E13200214AAF43007F26AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E131FF214AAF43007F26AF /* Assets.xcassets */; };
@@ -23,8 +24,9 @@
 		34760910214AF2F00002AB8C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		34760912214AF4320002AB8C /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		34760914214AF4F00002AB8C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		34760917214AF64E0002AB8C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		34760917214AF64E0002AB8C /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		34760919214AF7370002AB8C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3476091B214B111B0002AB8C /* JournalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsTableViewController.swift; sourceTree = "<group>"; };
 		34E131F5214AAF42007F26AF /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E131F8214AAF42007F26AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34E131FD214AAF42007F26AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				34760914214AF4F00002AB8C /* Entry.swift */,
-				34760917214AF64E0002AB8C /* EntryController.swift */,
+				34760917214AF64E0002AB8C /* JournalController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				34E131FC214AAF42007F26AF /* Main.storyboard */,
+				3476091B214B111B0002AB8C /* JournalsTableViewController.swift */,
 				34E1D7E1214AF142007C71F2 /* EntriesTableViewController.swift */,
 				34760910214AF2F00002AB8C /* EntryTableViewCell.swift */,
 				34760912214AF4320002AB8C /* EntryDetailViewController.swift */,
@@ -174,9 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34760918214AF64E0002AB8C /* EntryController.swift in Sources */,
+				34760918214AF64E0002AB8C /* JournalController.swift in Sources */,
 				34760915214AF4F00002AB8C /* Entry.swift in Sources */,
 				3476091A214AF7370002AB8C /* HTTPMethod.swift in Sources */,
+				3476091C214B111B0002AB8C /* JournalsTableViewController.swift in Sources */,
 				34760911214AF2F00002AB8C /* EntryTableViewCell.swift in Sources */,
 				34E1D7E2214AF142007C71F2 /* EntriesTableViewController.swift in Sources */,
 				34760913214AF4320002AB8C /* EntryDetailViewController.swift in Sources */,

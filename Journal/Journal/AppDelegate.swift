@@ -17,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        EntryController().createEntry(title: "Second Test", bodyText: "This is the second test of my API") { (_) in
-//            print("I completed the PUT.")
-//        }
-        
+//        JournalController().createJournal(title: "1st Journal", completion: { (_) in
+//            print("I completed PUTting the journal.")
+//        })
         return true
     }
 

@@ -16,7 +16,8 @@ class EntryDetailViewController: UIViewController {
             updateViews()
         }
     }
-    var entryController: EntryController?
+    var journal: Journal?
+    var journalController: JournalController?
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
@@ -31,16 +32,17 @@ class EntryDetailViewController: UIViewController {
     // MARK: - UI Methods
     @IBAction func saveEntry(_ sender: Any) {
         guard let title = titleTextField.text, !title.isEmpty,
-            let bodyText = bodyTextView.text, !bodyText.isEmpty else { return }
+            let bodyText = bodyTextView.text, !bodyText.isEmpty,
+        let journal = journal else { return }
         
         if let entry = entry {
-            entryController?.update(entry, title: title, bodyText: bodyText, completion: { (_) in
+            journalController?.update(journal: journal, entry: entry, title: title, bodyText: bodyText, completion: { (_) in
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }
             })
         } else {
-            entryController?.createEntry(title: title, bodyText: bodyText, completion: { (_) in
+            journalController?.createEntry(journal: journal, title: title, bodyText: bodyText, completion: { (_) in
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }

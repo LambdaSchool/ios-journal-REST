@@ -11,27 +11,25 @@ import UIKit
 class EntriesTableViewController: UITableViewController {
     
     // MARK: - Properties
-    let entryController = EntryController()
+    var journalController: JournalController?
+    var journal: Journal?
 
     // MARK: - Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        entryController.fetchEntries { (_) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        updateViews()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryController.entries.count
+        return journal?.entries.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as! EntryTableViewCell
-        let entry = entryController.entries[indexPath.row]
+        let entry = journal?.sortedEntries[indexPath.row]
         
         cell.entry = entry
 
@@ -40,9 +38,10 @@ class EntriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let entry = entryController.entries[indexPath.row]
+            guard let journal = journal else { return }
+            let entry = journal.sortedEntries[indexPath.row]
             
-            entryController.deleteEntry(entry) { (error) in
+            journalController?.deleteEntry(journal: journal, entry: entry) { (error) in
                 DispatchQueue.main.async {
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 }
@@ -55,15 +54,25 @@ class EntriesTableViewController: UITableViewController {
         if segue.identifier == "AddEntrySegue" {
             let destinationVC = segue.destination as! EntryDetailViewController
             
-            destinationVC.entryController = entryController
+            destinationVC.journalController = journalController
+            destinationVC.journal = journal
         } else if segue.identifier == "ShowEntrySegue" {
             guard let destincationVC = segue.destination as? EntryDetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow else { return }
-            let entry = entryController.entries[indexPath.row]
+                let indexPath = tableView.indexPathForSelectedRow, let journal = journal else { return }
+            let entry = journal.sortedEntries[indexPath.row]
+            
             
             destincationVC.entry = entry
-            destincationVC.entryController = entryController
+            destincationVC.journal = journal
+            destincationVC.journalController = journalController
         }
     }
 
+    // MARK: - Utility Methods
+    private func updateViews() {
+        guard let journal = journal else { return }
+        
+        title = journal.title
+    }
+    
 }
