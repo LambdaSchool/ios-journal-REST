@@ -13,6 +13,7 @@
 		A1B7F8C3214B0A2600142B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B7F8C1214B0A2600142B80 /* LaunchScreen.storyboard */; };
 		A1B7F8CB214B0E5B00142B80 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */; };
 		A1B7F8CD214B0F9300142B80 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CC214B0F9300142B80 /* EntryTableViewCell.swift */; };
+		A1B7F8CF214B1B1C00142B80 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CE214B1B1C00142B80 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A1B7F8C4214B0A2600142B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		A1B7F8CC214B0F9300142B80 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		A1B7F8CE214B1B1C00142B80 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */,
 				A1B7F8B8214B0A2500142B80 /* AppDelegate.swift */,
 				A1B7F8BC214B0A2500142B80 /* Main.storyboard */,
+				A1B7F8CE214B1B1C00142B80 /* EntryDetailViewController.swift */,
 				A1B7F8CC214B0F9300142B80 /* EntryTableViewCell.swift */,
 				A1B7F8BF214B0A2600142B80 /* Assets.xcassets */,
 				A1B7F8C1214B0A2600142B80 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				A1B7F8CD214B0F9300142B80 /* EntryTableViewCell.swift in Sources */,
 				A1B7F8CB214B0E5B00142B80 /* EntriesTableViewController.swift in Sources */,
+				A1B7F8CF214B1B1C00142B80 /* EntryDetailViewController.swift in Sources */,
 				A1B7F8B9214B0A2500142B80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
