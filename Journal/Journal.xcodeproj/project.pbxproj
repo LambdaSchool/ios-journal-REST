@@ -14,6 +14,9 @@
 		A1B7F8CB214B0E5B00142B80 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */; };
 		A1B7F8CD214B0F9300142B80 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CC214B0F9300142B80 /* EntryTableViewCell.swift */; };
 		A1B7F8CF214B1B1C00142B80 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8CE214B1B1C00142B80 /* EntryDetailViewController.swift */; };
+		A1B7F8D3214B1DFC00142B80 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8D2214B1DFC00142B80 /* Entry.swift */; };
+		A1B7F8D5214B20B900142B80 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8D4214B20B900142B80 /* EntryController.swift */; };
+		A1B7F8D7214B2CDD00142B80 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7F8D6214B2CDD00142B80 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		A1B7F8CC214B0F9300142B80 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		A1B7F8CE214B1B1C00142B80 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		A1B7F8D2214B1DFC00142B80 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		A1B7F8D4214B20B900142B80 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		A1B7F8D6214B2CDD00142B80 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 		A1B7F8B7214B0A2500142B80 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				A1B7F8D2214B1DFC00142B80 /* Entry.swift */,
+				A1B7F8D4214B20B900142B80 /* EntryController.swift */,
+				A1B7F8D6214B2CDD00142B80 /* HTTPMethod.swift */,
 				A1B7F8CA214B0E5B00142B80 /* EntriesTableViewController.swift */,
 				A1B7F8B8214B0A2500142B80 /* AppDelegate.swift */,
 				A1B7F8BC214B0A2500142B80 /* Main.storyboard */,
@@ -141,6 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B7F8D5214B20B900142B80 /* EntryController.swift in Sources */,
+				A1B7F8D3214B1DFC00142B80 /* Entry.swift in Sources */,
+				A1B7F8D7214B2CDD00142B80 /* HTTPMethod.swift in Sources */,
 				A1B7F8CD214B0F9300142B80 /* EntryTableViewCell.swift in Sources */,
 				A1B7F8CB214B0E5B00142B80 /* EntriesTableViewController.swift in Sources */,
 				A1B7F8CF214B1B1C00142B80 /* EntryDetailViewController.swift in Sources */,
