@@ -14,6 +14,9 @@ class EntryDetailViewController: UIViewController {
     @IBAction func saveEntry(_ sender: Any) {
     }
     
+    var entry: Entry?
+    var entryController: EntryController?
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
 
