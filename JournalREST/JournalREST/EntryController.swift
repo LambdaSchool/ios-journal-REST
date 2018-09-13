@@ -55,7 +55,7 @@ class EntryController {
                 
                 let resultValues = entryResults.map( { $0.value } )
                 let sortedKeys = resultValues.sorted(by: { (entry1, entry2) -> Bool in
-                    return entry1.identifier > entry2.identifier
+                    return entry1.timestamp > entry2.timestamp
                 })
                
                 self.entries = sortedKeys
