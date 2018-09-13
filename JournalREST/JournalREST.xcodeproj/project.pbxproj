@@ -17,6 +17,9 @@
 		7B16A7D0214AB24900DC818A /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A7CF214AB24900DC818A /* EntriesTableViewController.swift */; };
 		7B16A7D2214ABAAD00DC818A /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A7D1214ABAAD00DC818A /* EntryTableViewCell.swift */; };
 		7B16A7D4214AC1B600DC818A /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A7D3214AC1B600DC818A /* EntryDetailViewController.swift */; };
+		7B16A812214AEF0F00DC818A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A811214AEF0F00DC818A /* Entry.swift */; };
+		7B16A814214AF10B00DC818A /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A813214AF10B00DC818A /* EntryController.swift */; };
+		7B16A816214AF79400DC818A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A815214AF79400DC818A /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		7B16A7CF214AB24900DC818A /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		7B16A7D1214ABAAD00DC818A /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		7B16A7D3214AC1B600DC818A /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		7B16A811214AEF0F00DC818A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		7B16A813214AF10B00DC818A /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		7B16A815214AF79400DC818A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				7B16A7A3214A1DF300DC818A /* ViewController.swift */,
 				7B16A7A5214A1DF300DC818A /* Main.storyboard */,
 				7B16A7D3214AC1B600DC818A /* EntryDetailViewController.swift */,
+				7B16A811214AEF0F00DC818A /* Entry.swift */,
+				7B16A813214AF10B00DC818A /* EntryController.swift */,
+				7B16A815214AF79400DC818A /* HTTPMethod.swift */,
 				7B16A7D1214ABAAD00DC818A /* EntryTableViewCell.swift */,
 				7B16A7CF214AB24900DC818A /* EntriesTableViewController.swift */,
 				7B16A7A8214A1DF400DC818A /* Assets.xcassets */,
@@ -265,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B16A812214AEF0F00DC818A /* Entry.swift in Sources */,
 				7B16A7D2214ABAAD00DC818A /* EntryTableViewCell.swift in Sources */,
+				7B16A814214AF10B00DC818A /* EntryController.swift in Sources */,
 				7B16A7D0214AB24900DC818A /* EntriesTableViewController.swift in Sources */,
+				7B16A816214AF79400DC818A /* HTTPMethod.swift in Sources */,
 				7B16A7A4214A1DF300DC818A /* ViewController.swift in Sources */,
 				7B16A7D4214AC1B600DC818A /* EntryDetailViewController.swift in Sources */,
 				7B16A7A2214A1DF300DC818A /* AppDelegate.swift in Sources */,
