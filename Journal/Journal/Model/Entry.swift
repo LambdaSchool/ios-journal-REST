@@ -9,20 +9,24 @@
 import Foundation
 
 struct Entry: Codable, Equatable {
+    
+    // MARK: - Properties
     var title: String
     var bodyText: String
     let timestampCreated: Date
     var timestampUpdated: Date
     let identifier: String
     
+    /// Computed property that returns a formatted string of the timestamp updated property.
     var formattedTimestamp: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .medium
         
-        return dateFormatter.string(from: timestampCreated)
+        return dateFormatter.string(from: timestampUpdated)
     }
     
+    // MARK: - Initializers
     init(title: String, bodyText: String) {
         self.title = title
         self.bodyText = bodyText

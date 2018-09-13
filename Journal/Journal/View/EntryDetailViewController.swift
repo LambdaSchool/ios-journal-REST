@@ -21,12 +21,14 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateViews()
     }
 
+    // MARK: - UI Methods
     @IBAction func saveEntry(_ sender: Any) {
         guard let title = titleTextField.text, !title.isEmpty,
             let bodyText = bodyTextView.text, !bodyText.isEmpty else { return }

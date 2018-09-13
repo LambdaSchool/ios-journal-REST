@@ -13,20 +13,11 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Properties
     let entryController = EntryController()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
+    // MARK: - Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        entryController.fetchEntries { (error) in
-            if let error = error {
-                NSLog("Error fetching entries: \(error)")
-                return
-            }
-            
+        entryController.fetchEntries { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
