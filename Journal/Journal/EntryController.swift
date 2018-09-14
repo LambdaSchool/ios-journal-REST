@@ -32,13 +32,18 @@ class EntryController {
             }
             do {
                 //Come back to sort
-                let fetchedEntries = try JSONDecoder().decode([Entry].self, from: data)
-                self.entries = fetchedEntries
+                let fetchedEntries = try JSONDecoder().decode([String: Entry].self, from: data)
+                self.entries = fetchedEntries.map {$0.value}
+               completion(nil)
             } catch {
                 NSLog("Error getting data: \(error)")
                 completion(error)
             }
         }.resume()
+    }
+    func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        let entry = Entry(title: title, bodyText: bodyText)
+        put(entry: entry, completion: completion)
     }
     
     

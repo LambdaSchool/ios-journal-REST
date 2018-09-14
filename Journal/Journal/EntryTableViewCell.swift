@@ -13,7 +13,10 @@ class EntryTableViewCell: UITableViewCell {
     func updateViews() {
         entryTitle?.text = entry?.title
         entryBody?.text = entry?.bodyText
-        entryTimestamp?.text = DateFormatter().string(from: (entry?.timestamp)!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy h:mm a"
+        let date = dateFormatter.string(from: (entry?.timestamp)!)
+        entryTimestamp?.text = date
     }
 
     override func awakeFromNib() {
