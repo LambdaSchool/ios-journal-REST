@@ -11,7 +11,7 @@
 		9649DB02214B17AD00A9C8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9649DB00214B17AD00A9C8F8 /* Main.storyboard */; };
 		9649DB04214B17AE00A9C8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9649DB03214B17AE00A9C8F8 /* Assets.xcassets */; };
 		9649DB07214B17AE00A9C8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9649DB05214B17AE00A9C8F8 /* LaunchScreen.storyboard */; };
-		96F564D5214B31470083D349 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F564D4214B31470083D349 /* Constants.swift */; };
+		96F564D5214B31470083D349 /* Constants+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F564D4214B31470083D349 /* Constants+Helpers.swift */; };
 		96F564D7214B321C0083D349 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F564D6214B321C0083D349 /* JournalTableViewCell.swift */; };
 		96F564D9214B32280083D349 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F564D8214B32280083D349 /* EntryTableViewCell.swift */; };
 		96F564DC214B325E0083D349 /* JournalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F564DB214B325E0083D349 /* JournalListTableViewController.swift */; };
@@ -28,7 +28,7 @@
 		9649DB03214B17AE00A9C8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9649DB06214B17AE00A9C8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9649DB08214B17AE00A9C8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96F564D4214B31470083D349 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		96F564D4214B31470083D349 /* Constants+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Helpers.swift"; sourceTree = "<group>"; };
 		96F564D6214B321C0083D349 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		96F564D8214B32280083D349 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		96F564DB214B325E0083D349 /* JournalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		96F564D3214B30100083D349 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				96F564D4214B31470083D349 /* Constants.swift */,
+				96F564D4214B31470083D349 /* Constants+Helpers.swift */,
 				9649DB03214B17AE00A9C8F8 /* Assets.xcassets */,
 				9649DB05214B17AE00A9C8F8 /* LaunchScreen.storyboard */,
 				9649DB08214B17AE00A9C8F8 /* Info.plist */,
@@ -186,7 +186,7 @@
 				96F564E0214B32830083D349 /* EntryDetailsViewController.swift in Sources */,
 				96F564D7214B321C0083D349 /* JournalTableViewCell.swift in Sources */,
 				96F564E7214B5B3B0083D349 /* Journal+EntryController.swift in Sources */,
-				96F564D5214B31470083D349 /* Constants.swift in Sources */,
+				96F564D5214B31470083D349 /* Constants+Helpers.swift in Sources */,
 				96F564E5214B59CF0083D349 /* Journal+Entry.swift in Sources */,
 				96F564DC214B325E0083D349 /* JournalListTableViewController.swift in Sources */,
 			);

@@ -18,3 +18,10 @@ enum SegueIdentifiers: String {
     case toEntriesList = "EntriesList"
     case toEntryDetails = "EntryDetails"
 }
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
+}
