@@ -86,6 +86,12 @@ class EntryController {
         
         entries[index].title = title
         entries[index].bodyText = bodyText
+        
+        let entryToPut = entries[index]
+        put(with: entryToPut) { (error) -> (Void) in
+            if let error = error { completion(error) }
+            completion(nil)
+        }
     }
     
     

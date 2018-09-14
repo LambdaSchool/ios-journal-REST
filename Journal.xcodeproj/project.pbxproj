@@ -69,8 +69,7 @@
 				96F564E1214B328B0083D349 /* View Controllers */,
 				96F564DA214B322E0083D349 /* Cells */,
 				96F564D3214B30100083D349 /* Resources */,
-				96F564E4214B59CF0083D349 /* Entry.swift */,
-				96F564E8214B721C0083D349 /* EntryController.swift */,
+				96F564EA214B837D0083D349 /* Model + Model Controller */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -101,6 +100,15 @@
 				96F564DF214B32830083D349 /* EntryDetailsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		96F564EA214B837D0083D349 /* Model + Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96F564E4214B59CF0083D349 /* Entry.swift */,
+				96F564E8214B721C0083D349 /* EntryController.swift */,
+			);
+			path = "Model + Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -47,7 +47,7 @@ class EntryDetailsViewController: UIViewController {
     }
     
     
-    var entry: Entry? { didSet { updateViews() }}
+    var entry: Entry?
     var entryController: EntryController?
 
     @IBOutlet weak var titleTextField: UITextField!
