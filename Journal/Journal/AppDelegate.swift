@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        let entry = Entry(title: "Testing", bodyText: "This better work")
+//        EntryController().put(entry: entry) { (_) in
+//            print("This is testing")
+//        }
         // Override point for customization after application launch.
         return true
     }
