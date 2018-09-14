@@ -1,5 +1,5 @@
 //
-//  Journal+EntryController.swift
+//  EntryController.swift
 //  Journal
 //
 //  Created by Jason Modisett on 9/13/18.
@@ -10,6 +10,7 @@ import Foundation
 
 class EntryController {
     
+    // Put or update an entry in Firebase
     func put(with entry: Entry, completion: @escaping (Error?) -> (Void)) {
         let requestUrl = baseURL.appendingPathComponent(entry.identifier).appendingPathComponent(".json")
         
@@ -31,7 +32,7 @@ class EntryController {
                 NSLog("PUT successful")
                 completion(nil)
                 
-            }.resume()
+                }.resume()
             
         } catch {
             NSLog("Error encoding data: \(error)")
@@ -45,6 +46,35 @@ class EntryController {
         let entry = Entry(title: title, bodyText: bodyText)
         
         put(with: entry) { (error) -> (Void) in
+            completion(error)
+        }
+    }
+    
+    func delete(entry: Entry, completion: @escaping (Error?) -> (Void)) {
+        let requestUrl = baseURL.appendingPathComponent(entry.identifier).appendingPathComponent(".json")
+        
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        do {
+            let encodedEntry = try JSONEncoder().encode(entry)
+            request.httpBody = encodedEntry
+            
+            let _ = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                if let error = error {
+                    NSLog("Error DELETEing entry in Firebase: \(error)")
+                    completion(error)
+                }
+                
+                NSLog("DELETE successful")
+                guard let index = self.entries.index(of: entry) else { return }
+                self.entries.remove(at: index)
+                completion(nil)
+                
+                }.resume()
+            
+        } catch {
+            NSLog("Error encoding data: \(error)")
             completion(error)
         }
     }
@@ -79,8 +109,8 @@ class EntryController {
             }
             
             do {
-                let result = try JSONDecoder().decode([Entry].self, from: data)
-                self.entries = result.sorted(by: { (entry, entry2) -> Bool in
+                let getRequest = try JSONDecoder().decode([String: Entry].self, from: data)
+                self.entries = getRequest.values.sorted(by: { (entry, entry2) -> Bool in
                     entry.timestamp.compare(entry2.timestamp) == .orderedDescending
                 })
                 completion(nil)
@@ -89,7 +119,7 @@ class EntryController {
                 completion(error)
             }
             
-        }.resume()
+            }.resume()
     }
     
     

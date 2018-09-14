@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct Journal: Equatable, Codable {
-    let title: String
-    var entries: [Entry]
-}
-
 struct Entry: Equatable, Codable {
     var title: String
     var bodyText: String
