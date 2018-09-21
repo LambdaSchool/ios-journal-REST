@@ -16,6 +16,7 @@
 		C3F1781F2154823F00EFE0FD /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1781E2154823F00EFE0FD /* EntryDetailViewController.swift */; };
 		C3F17825215482C600EFE0FD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F17824215482C600EFE0FD /* HTTPMethod.swift */; };
 		C3F1782821548C0800EFE0FD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1782721548C0800EFE0FD /* Entry.swift */; };
+		C3F1782A2154902900EFE0FD /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F178292154902900EFE0FD /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C3F1781E2154823F00EFE0FD /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		C3F17824215482C600EFE0FD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C3F1782721548C0800EFE0FD /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		C3F178292154902900EFE0FD /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				C3F17824215482C600EFE0FD /* HTTPMethod.swift */,
 				C3F1782721548C0800EFE0FD /* Entry.swift */,
+				C3F178292154902900EFE0FD /* EntryController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				C3F1782821548C0800EFE0FD /* Entry.swift in Sources */,
 				C3F1781D2154814900EFE0FD /* EntryTableViewCell.swift in Sources */,
+				C3F1782A2154902900EFE0FD /* EntryController.swift in Sources */,
 				C3F1781921547C6500EFE0FD /* EntriesTableViewController.swift in Sources */,
 				C3F1781F2154823F00EFE0FD /* EntryDetailViewController.swift in Sources */,
 				C3F17825215482C600EFE0FD /* HTTPMethod.swift in Sources */,
