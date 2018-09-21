@@ -104,8 +104,9 @@ class EntryController {
             decoder.keyDecodingStrategy = .convertFromSnakeCase // Convert keys from snake_case to camelCase
             
             do {
-                let decodedEntry = try decoder.decode([Entry].self, from: data)
-                let sortedData = decodedEntry.sorted() { $0.title < $1.title}
+                let decodedEntry = try decoder.decode([String : Entry].self, from: data) // Key is String, value is Entry
+                let entryValue = decodedEntry.map { $0.value } // Get [Entry] values
+                let sortedData = entryValue.sorted() { $0.timestmap < $1.timestmap} // Sort [Entry] by time
                 self.entries = sortedData
                 completion(nil)
             } catch {
@@ -113,6 +114,6 @@ class EntryController {
                 completion(error)
                 return
             }
-        }
+        }.resume()
     }
 }
