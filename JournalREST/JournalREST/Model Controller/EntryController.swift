@@ -75,8 +75,15 @@ class EntryController {
         
         entries[index].title = title
         entries[index].bodyText = bodyText
+        let updatedEntry = entries[index]
         
-        put(entry: entry, completion: completion)
+        put(entry: updatedEntry, completion: completion)
+    }
+    
+    // Delete the entry
+    func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        entries.remove(at: index)
     }
     
     func fetchEntries(completion: @escaping (Error?) -> Void) {
