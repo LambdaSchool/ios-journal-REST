@@ -17,7 +17,7 @@ class EntryController {
     
     // MARK: - Base URL
     
-    static let baseURl = URL(string: "https://journal-b5918.firebaseio.com/")!
+    static let baseURL = URL(string: "https://journal-b5918.firebaseio.com/")!
     
     
     // MARK: Encode PUT method
@@ -25,7 +25,7 @@ class EntryController {
     func put(entry: Entry, completion: @escaping (Error?) -> Void) {
         
         // Create a request url
-        var url = EntryController.baseURl.appendingPathComponent(entry.identifier)
+        var url = EntryController.baseURL.appendingPathComponent(entry.identifier)
         url.appendPathExtension("json")
         
         var request = URLRequest(url: url)
@@ -77,7 +77,42 @@ class EntryController {
         entries[index].bodyText = bodyText
         
         put(entry: entry, completion: completion)
-        
     }
     
+    func fetchEntries(completion: @escaping (Error?) -> Void) {
+        
+        // Creata a url
+        let url = EntryController.baseURL.appendingPathExtension("json")
+        
+        // Default method is GET so don't need to set the httpMehod
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching data: \(error)")
+                completion(error)
+                return
+            }
+            
+            // Check if there ia a data
+            guard let data = data else {
+                NSLog("No data returned")
+                completion(error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase // Convert keys from snake_case to camelCase
+            
+            do {
+                let decodedEntry = try decoder.decode([Entry].self, from: data)
+                let sortedData = decodedEntry.sorted() { $0.title < $1.title}
+                self.entries = sortedData
+                completion(nil)
+            } catch {
+                NSLog("Error decoding data: \(error)")
+                completion(error)
+                return
+            }
+        }
+    }
 }

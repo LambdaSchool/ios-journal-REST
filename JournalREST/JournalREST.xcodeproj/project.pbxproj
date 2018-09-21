@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				820F00B12154785600F7F9E3 /* Model */,
-				820F00B421547D7300F7F9E3 /* Model Controlle */,
+				820F00B421547D7300F7F9E3 /* Model Controller */,
 				820F00AB21546BB200F7F9E3 /* View */,
 				820F00AC2154711000F7F9E3 /* View Controller */,
 				820F00B721547E2200F7F9E3 /* Utility */,
@@ -111,12 +111,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		820F00B421547D7300F7F9E3 /* Model Controlle */ = {
+		820F00B421547D7300F7F9E3 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
 				820F00B221547D6F00F7F9E3 /* EntryController.swift */,
 			);
-			path = "Model Controlle";
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 		820F00B721547E2200F7F9E3 /* Utility */ = {
