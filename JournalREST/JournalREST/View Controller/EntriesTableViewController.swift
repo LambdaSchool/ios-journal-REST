@@ -13,12 +13,17 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Properties
     
     let entryController = EntryController()
+    let refresher = UIRefreshControl()
     
     
     // MARK: Application lifecycle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
+        tableView.addSubview(refresher)
+        refresher.addTarget(self, action: #selector(reFetch), for: .valueChanged)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +36,16 @@ class EntriesTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Fetch function for UIRefreshControl
+    
+    @objc func reFetch() {
+        entryController.fetchEntries { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refresher.endRefreshing()
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -51,11 +66,13 @@ class EntriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            guard let index = tableView.indexPathForSelectedRow else { return }
-            let theEntry = entryController.entries[index.row]
+            //guard let index = tableView.indexPathForSelectedRow else { return }
+            let theEntry = entryController.entries[indexPath.row]
             
             entryController.deleteEntry(entry: theEntry) { (_) in
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                DispatchQueue.main.async {
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
             }
         }
     }

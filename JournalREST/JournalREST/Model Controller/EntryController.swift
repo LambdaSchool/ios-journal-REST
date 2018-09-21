@@ -92,9 +92,6 @@ class EntryController {
                 return
             }
             
-            guard let index = self.entries.index(of: entry) else { return }
-            self.entries.remove(at: index)
-            
             completion(nil)
         }.resume()
     }
@@ -125,7 +122,11 @@ class EntryController {
     // Delete the entry
     func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void) {
         
-        delete(entry: entry, completion: completion)
+        delete(entry: entry) { (_) in
+            guard let index = self.entries.index(of: entry) else { return }
+            self.entries.remove(at: index)
+        }
+        completion(nil)
     }
     
     // REST Fetch functions
