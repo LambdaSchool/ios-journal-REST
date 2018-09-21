@@ -20,7 +20,7 @@ class EntryController {
     static let baseURL = URL(string: "https://journal-b5918.firebaseio.com/")!
     
     
-    // MARK: Encode PUT method
+    // MARK: REST function. PUT
     
     func put(entry: Entry, completion: @escaping (Error?) -> Void) {
         
@@ -29,7 +29,7 @@ class EntryController {
         url.appendPathExtension("json")
         
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.put.rawValue
+        request.httpMethod = HTTPMethod.put.rawValue // PUT method
         
         // Encode data
         let encoder = JSONEncoder()
@@ -59,6 +59,48 @@ class EntryController {
     }
     
     
+    // MARK: REST function. DELETE
+    
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        
+        // Create a request url of the entry
+        var url = EntryController.baseURL.appendingPathComponent(entry.identifier)
+        url.appendPathExtension("json")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.delete.rawValue // DELETE method
+        
+        // Encode data of the entry
+        let encoder = JSONEncoder()
+
+        do {
+            let encodedEntry = try encoder.encode(entry)
+            request.httpBody = encodedEntry
+            completion(nil)
+        } catch {
+            NSLog("Error encoding data: \(error)")
+            completion(error)
+            return
+        }
+        
+        // Create the task
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error deleting entry: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let index = self.entries.index(of: entry) else { return }
+            self.entries.remove(at: index)
+            
+            completion(nil)
+        }.resume()
+    }
+    
+    
+    
     // MARK: - CRUD
     
     // Create an entry
@@ -82,9 +124,11 @@ class EntryController {
     
     // Delete the entry
     func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void) {
-        guard let index = entries.index(of: entry) else { return }
-        entries.remove(at: index)
+        
+        delete(entry: entry, completion: completion)
     }
+    
+    // REST Fetch functions
     
     func fetchEntries(completion: @escaping (Error?) -> Void) {
         
@@ -111,9 +155,9 @@ class EntryController {
             decoder.keyDecodingStrategy = .convertFromSnakeCase // Convert keys from snake_case to camelCase
             
             do {
-                let decodedEntry = try decoder.decode([String : Entry].self, from: data) // Key is String, value is Entry
-                let entryValue = decodedEntry.map { $0.value } // Get [Entry] values
-                let sortedData = entryValue.sorted() { $0.timestmap < $1.timestmap} // Sort [Entry] by time
+                let entryDictionary = try decoder.decode([String : Entry].self, from: data) // Key is String, value is Entry
+                let values = entryDictionary.map { $0.value } // Get [Entry] values
+                let sortedData = values.sorted() { $0.timestmap < $1.timestmap} // Sort [Entry] by time
                 self.entries = sortedData
                 completion(nil)
             } catch {

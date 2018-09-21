@@ -52,8 +52,11 @@ class EntriesTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             guard let index = tableView.indexPathForSelectedRow else { return }
-            entryController.entries.remove(at: index.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let theEntry = entryController.entries[index.row]
+            
+            entryController.deleteEntry(entry: theEntry) { (_) in
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
 
