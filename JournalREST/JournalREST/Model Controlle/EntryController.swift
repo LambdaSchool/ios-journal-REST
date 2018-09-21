@@ -56,7 +56,18 @@ class EntryController {
             
             completion(nil)
         }.resume()
+    }
+    
+    
+    // MARK: - CRUD
+    
+    func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         
+        let newEntry = Entry(title: title, bodyText: bodyText)
+        
+        put(entry: newEntry) { (error) in
+            completion(error)
+        }
     }
     
 }
