@@ -12,7 +12,7 @@ class EntryController {
     
     // MARK: - Properties
     
-    var etries: [Entry] = []
+    var entries: [Entry] = []
     
     
     // MARK: - Base URL
@@ -20,7 +20,7 @@ class EntryController {
     static let baseURl = URL(string: "https://journal-b5918.firebaseio.com/")!
     
     
-    // MARK: Put functions
+    // MARK: Encode PUT method
     
     func put(entry: Entry, completion: @escaping (Error?) -> Void) {
         
@@ -61,13 +61,23 @@ class EntryController {
     
     // MARK: - CRUD
     
+    // Create an entry
     func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         
         let newEntry = Entry(title: title, bodyText: bodyText)
         
-        put(entry: newEntry) { (error) in
-            completion(error)
-        }
+        put(entry: newEntry, completion: completion)
+    }
+    
+    // Update the entry
+    func updateEntry(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        
+        entries[index].title = title
+        entries[index].bodyText = bodyText
+        
+        put(entry: entry, completion: completion)
+        
     }
     
 }

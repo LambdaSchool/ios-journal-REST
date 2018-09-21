@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Entry: Codable, Equatable {
+struct Entry: Equatable, Codable {
     
     // MARK: Properties
     
     var title: String
     var bodyText: String
     let timestmap: Date
-    let identifier: String
+    var identifier: String
     
     
     // MARK: Initializer
