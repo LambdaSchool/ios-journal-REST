@@ -66,7 +66,6 @@ class EntriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            //guard let index = tableView.indexPathForSelectedRow else { return }
             let theEntry = entryController.entries[indexPath.row]
             
             entryController.deleteEntry(entry: theEntry) { (_) in

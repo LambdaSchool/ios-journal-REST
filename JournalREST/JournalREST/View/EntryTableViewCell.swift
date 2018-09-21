@@ -32,12 +32,15 @@ class EntryTableViewCell: UITableViewCell {
         titleLabel.text = entry.title
         bodyLabel.text = entry.bodyText
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "mm-dd-yyyy HH:mm"
-        let time = dateFormatter.string(from: entry.timestmap)
+        // Create a DateFormatter and give a style to the time
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
         
+        // Convert Date to String
+        let time = formatter.string(from: entry.timestmap)
+        
+        // Assign it to the label
         timeLabel.text = time
     }
     

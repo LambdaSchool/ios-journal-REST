@@ -23,9 +23,7 @@ struct Entry: Equatable, Codable {
     init(title: String, bodyText: String) {
         self.title = title
         self.bodyText = bodyText
-        self.timestmap = Date(timeIntervalSince1970: unixTimestamp)
+        self.timestmap = Date()
         self.identifier = UUID().uuidString
     }
-    
-    let unixTimestamp = 1480134638.0
 }
