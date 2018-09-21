@@ -96,19 +96,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7TJ-cy-BxI">
-                                <rect key="frame" x="16" y="132" width="343" height="585"/>
+                                <rect key="frame" x="16" y="132" width="343" height="485"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFM-Nj-f6O">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MFM-Nj-f6O">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nj2-7R-WTz">
-                                        <rect key="frame" x="0.0" y="38" width="343" height="547"/>
+                                        <rect key="frame" x="0.0" y="38" width="343" height="447"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                 </subviews>
                             </stackView>
@@ -116,7 +116,7 @@
                         <color key="backgroundColor" red="0.91636262690000003" green="0.91636262690000003" blue="0.91636262690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7TJ-cy-BxI" firstAttribute="leading" secondItem="5a7-ta-jri" secondAttribute="leading" constant="16" id="9vq-MH-15F"/>
-                            <constraint firstItem="7TJ-cy-BxI" firstAttribute="bottom" secondItem="5a7-ta-jri" secondAttribute="bottom" constant="50" id="HKt-Cn-KcF"/>
+                            <constraint firstItem="5a7-ta-jri" firstAttribute="bottom" secondItem="7TJ-cy-BxI" secondAttribute="bottom" constant="50" id="M7H-C1-urX"/>
                             <constraint firstItem="5a7-ta-jri" firstAttribute="trailing" secondItem="7TJ-cy-BxI" secondAttribute="trailing" constant="16" id="Pbm-qw-4hL"/>
                             <constraint firstItem="7TJ-cy-BxI" firstAttribute="top" secondItem="5a7-ta-jri" secondAttribute="top" constant="16" id="mrG-Jz-Ph2"/>
                         </constraints>
