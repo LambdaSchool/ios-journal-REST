@@ -15,6 +15,7 @@
 		C3F1781D2154814900EFE0FD /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1781C2154814900EFE0FD /* EntryTableViewCell.swift */; };
 		C3F1781F2154823F00EFE0FD /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1781E2154823F00EFE0FD /* EntryDetailViewController.swift */; };
 		C3F17825215482C600EFE0FD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F17824215482C600EFE0FD /* HTTPMethod.swift */; };
+		C3F1782821548C0800EFE0FD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1782721548C0800EFE0FD /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C3F1781C2154814900EFE0FD /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		C3F1781E2154823F00EFE0FD /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		C3F17824215482C600EFE0FD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C3F1782721548C0800EFE0FD /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F17824215482C600EFE0FD /* HTTPMethod.swift */,
+				C3F1782721548C0800EFE0FD /* Entry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F1782821548C0800EFE0FD /* Entry.swift in Sources */,
 				C3F1781D2154814900EFE0FD /* EntryTableViewCell.swift in Sources */,
 				C3F1781921547C6500EFE0FD /* EntriesTableViewController.swift in Sources */,
 				C3F1781F2154823F00EFE0FD /* EntryDetailViewController.swift in Sources */,
