@@ -43,33 +43,54 @@ class EntryController {
     
     func createEntry(withTitle title: String, andBody bodyText: String, completion: @escaping (Error?) -> Void) {
         let entry = Entry(title: title, bodyText: bodyText)
-        put(withEntry: entry) { (error) in
-            if let error = error {
-                print(error)
-            }
-        }
+        put(withEntry: entry, completion: completion)
         
     }
     
     func delete(entry: Entry, completion: @escaping (Entry?) -> Void) {
-        guard let index = entries.index(of: entry) else {return}
+        deleteFromServer(entry: entry) { (error) in
+            if let error = error {
+                print(error)
+            }
+            guard let index = self.entries.index(of: entry) else {return}
+            completion(self.entries.remove(at: index))
+        }
         
-        completion(entries.remove(at: index))
+    }
+    
+    func deleteFromServer(entry: Entry, completion: @escaping (Error?) -> Void) {
+        let url = EntryController.baseURL.appendingPathComponent(entry.identifier)
+        let urlJSON = url.appendingPathExtension("json")
         
-        //how to delete the table view cell inside of the completion closure
+        var urlRequest = URLRequest(url: urlJSON)
+        urlRequest.httpMethod = "DELETE"
         
+        do {
+            let encoder = JSONEncoder()
+            urlRequest.httpBody = try encoder.encode(entry)
+        } catch {
+            print(error)
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: urlRequest) { (_, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            completion(nil)
+            }.resume()
     }
     
     func update(withEntry entry: Entry, andTitle title: String, andBody bodyText: String, completion: @escaping (Error?) -> Void) {
         guard let index = entries.index(of: entry) else { return }
         entries[index].title = title
         entries[index].bodyText = bodyText
+        let updatedEntry = entries[index]
         
-        put(withEntry: entry) { (error) in
-            if let error = error {
-                print(error)
-            }
-        }
+        put(withEntry: updatedEntry, completion: completion)
     }
     
     func fetchEntries(completion: @escaping (Error?) -> Void) {

@@ -64,7 +64,7 @@ class EntryDetailViewController: UIViewController {
                     print(error)
                 }
                 DispatchQueue.main.async {
-                    _ = self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             })
             
@@ -74,7 +74,7 @@ class EntryDetailViewController: UIViewController {
                     print(error)
                 }
                 DispatchQueue.main.async {
-                    _ = self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             })
         }
