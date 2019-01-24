@@ -13,6 +13,7 @@
 		A2ACCCEC21FA7662006D6026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACCCEA21FA7662006D6026 /* LaunchScreen.storyboard */; };
 		A2ACCCF421FA7A7B006D6026 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */; };
 		A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */; };
+		A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2ACCCED21FA7662006D6026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */,
 				A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */,
+				A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */,
 				A2ACCCF421FA7A7B006D6026 /* EntriesTableViewController.swift in Sources */,
+				A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */,
 				A2ACCCE221FA7661006D6026 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

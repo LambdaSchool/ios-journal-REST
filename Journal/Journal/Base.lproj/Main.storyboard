@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="833.33333333333337" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail View Controller-->
         <scene sceneID="cgO-SD-n2r">
             <objects>
-                <viewController id="4nQ-Z2-2Bv" sceneMemberID="viewController">
+                <viewController id="4nQ-Z2-2Bv" customClass="EntryDetailViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUM-0T-YfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,6 +142,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZAU-qX-H2z"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ce5-0j-v0C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VG8-SV-umY">
+                            <connections>
+                                <action selector="save:" destination="4nQ-Z2-2Bv" id="YrS-gJ-cgd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="Zl1-XT-YvW" id="XQX-FC-SmA"/>
+                        <outlet property="textView" destination="qTP-SX-BW5" id="gp1-m3-oyD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amD-lK-kVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
