@@ -15,6 +15,7 @@
 		486CFF7321FA5A1100A32DEB /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7221FA5A1100A32DEB /* EntriesTableViewController.swift */; };
 		486CFF7521FA5A4C00A32DEB /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */; };
 		486CFF7721FA610600A32DEB /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7621FA610600A32DEB /* Entry.swift */; };
+		486CFF7921FA625C00A32DEB /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7821FA625C00A32DEB /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		486CFF7221FA5A1100A32DEB /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		486CFF7621FA610600A32DEB /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		486CFF7821FA625C00A32DEB /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				486CFF5F21FA571E00A32DEB /* AppDelegate.swift */,
 				486CFF7621FA610600A32DEB /* Entry.swift */,
+				486CFF7821FA625C00A32DEB /* EntryController.swift */,
 				486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */,
 				486CFF7121FA59E900A32DEB /* Controllers */,
 				486CFF6321FA571E00A32DEB /* Main.storyboard */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486CFF7921FA625C00A32DEB /* EntryController.swift in Sources */,
 				486CFF7721FA610600A32DEB /* Entry.swift in Sources */,
 				486CFF7521FA5A4C00A32DEB /* EntryTableViewCell.swift in Sources */,
 				486CFF7321FA5A1100A32DEB /* EntriesTableViewController.swift in Sources */,
