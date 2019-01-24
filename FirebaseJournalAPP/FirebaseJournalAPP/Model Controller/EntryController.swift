@@ -73,4 +73,38 @@ class EntryController {
             completion(nil)
         }
     }
+    
+    func fetchEntries(completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathExtension("json")
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if error != nil {
+                NSLog("Error: \(error!.localizedDescription)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Error fetching data: \(error!.localizedDescription)")
+                completion(error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let decodedEntries = try decoder.decode([String: Entry].self, from: data)
+                //get each [Entry] values
+                let values = decodedEntries.map{ $0.value }
+                let theSortedValues = values.sorted(by: { ($0.timestamp < $1.timestamp)})
+                self.entries = theSortedValues
+                completion(nil)
+            } catch {
+                NSLog("Error decoding data: \(error.localizedDescription)")
+                completion(error)
+                return
+            }
+            
+        }.resume()
+    }
 }
