@@ -15,6 +15,8 @@ class EntryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let entryController = EntryController()
     }
 
 

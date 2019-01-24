@@ -8,7 +8,7 @@ class EntryController {
     var entries: [Entry] = []
     
     func put(entry: String, completion: @escaping(Error?) -> Void) {
-        let entry = Entry(title: title, bodyText: bodyText, timestamp: Date, identifier: identifier)
+
         let url = baseURL.appendingPathComponent(entry.identifier)
         let newURL = url.appendingPathExtension("json")
         
@@ -35,4 +35,12 @@ class EntryController {
         }.resume()
     }
     
+    func createEntry(title: String, bodyText: String, timestamp: Date, identifier: String, completion: @escaping(Error?) -> Void) {
+        
+        let entry = Entry(title: title, bodyText: bodyText, timestamp: Date, identifier: identifier)
+        
+        put(entry: entry) { (error) in
+            completion(error)
+        }
+    }
 }
