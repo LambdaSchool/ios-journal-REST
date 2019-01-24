@@ -48,18 +48,23 @@ class EntriesTableViewController: UITableViewController {
         return cell
     }
     
-
-   
-
-  
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            
+            let entry = entryController.entries[indexPath.row]
+            entryController.deleteEntry(entry: entry) { (error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                // Delete the row from the data source
+                DispatchQueue.main.async {
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+            
+            
+        }
     }
  
 

@@ -58,6 +58,18 @@ class EntryController {
         }
     }
     
+    func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void){
+        guard let index = entries.index(of: entry) else {return}
+        let entryToDelete = self.entries.remove(at: index)
+        delete(entry: entryToDelete) { (error) in
+            if error != nil {
+                NSLog("Error deleting entry from table: \(error!.localizedDescription)")
+                completion(error)
+            }
+            completion(nil)
+        }
+    }
+    
     func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         guard let index = entries.index(of: entry) else {return}
         entries[index].title = title
@@ -72,6 +84,39 @@ class EntryController {
             }
             completion(nil)
         }
+    }
+    
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        
+        let url = baseURL.appendingPathComponent(entry.identifier)
+        let newUrl = url.appendingPathExtension("json")
+        
+        var request = URLRequest(url: newUrl)
+        request.httpMethod = HTTPMethods.delete.rawValue
+        
+        //encode the data
+        let encoder = JSONEncoder()
+        
+        do {
+          let encodedEntry = try encoder.encode(entry)
+            request.httpBody = encodedEntry
+            completion(nil)
+        } catch {
+            NSLog("Error encoding the data \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                NSLog("Error deleting entry: \(error)")
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+        }.resume()
+        
     }
     
     func fetchEntries(completion: @escaping (Error?) -> Void) {
