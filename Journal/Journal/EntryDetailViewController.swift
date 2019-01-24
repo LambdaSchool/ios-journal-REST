@@ -26,6 +26,10 @@ class EntryDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    var entry: Entry?
+    var entryController: EntryController?
+
 
     @IBOutlet weak var titleTextField: UITextField!
     

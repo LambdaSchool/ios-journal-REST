@@ -51,4 +51,47 @@ class EntryController {
         
     }
     
+    func update(withEntry entry: Entry, andTitle title: String, andBody bodyText: String, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        entries[index].title = title
+        entries[index].bodyText = bodyText
+        
+        put(withEntry: entry) { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
+    func fetchEntries(completion: @escaping (Error?) -> Void) {
+        let url = EntryController.baseURL.appendingPathExtension("json")
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                let decodedDict = try jsonDecoder.decode([String: Entry].self, from: data)
+                let entries = Array(decodedDict.values)
+                self.entries = entries
+                completion(nil)
+            } catch {
+                print("Error decoding received data: \(error)")
+                completion(error)
+                return
+            }
+            
+            }.resume()
+    
+    }
+    
 }

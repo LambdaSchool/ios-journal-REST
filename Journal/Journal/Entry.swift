@@ -9,7 +9,7 @@
 import Foundation
 
 struct Entry: Equatable, Codable {
-    let title: String
+    var title: String
     var bodyText: String
     let timestamp: Date
     let identifier: String
