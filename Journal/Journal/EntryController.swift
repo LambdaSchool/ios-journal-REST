@@ -7,7 +7,7 @@ let baseURL = URL(string: "https://books-118d9.firebaseio.com/")!
 class EntryController {
     var entries: [Entry] = []
     
-    func put(entry: String, completion: @escaping(Error?) -> Void) {
+    func put(entry: Entry, completion: @escaping(Error?) -> Void) {
 
         let url = baseURL.appendingPathComponent(entry.identifier)
         let newURL = url.appendingPathExtension("json")
