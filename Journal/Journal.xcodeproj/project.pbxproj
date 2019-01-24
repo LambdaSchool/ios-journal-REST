@@ -15,6 +15,7 @@
 		77F0701121FA59C500BE8A3F /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701021FA59C500BE8A3F /* EntryTableViewCell.swift */; };
 		77F0701321FA5C0B00BE8A3F /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701221FA5C0B00BE8A3F /* EntryDetailViewController.swift */; };
 		77F0701521FA5CF100BE8A3F /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701421FA5CF100BE8A3F /* Entry.swift */; };
+		77F0701721FA5DDB00BE8A3F /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701621FA5DDB00BE8A3F /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		77F0701021FA59C500BE8A3F /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		77F0701221FA5C0B00BE8A3F /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		77F0701421FA5CF100BE8A3F /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		77F0701621FA5DDB00BE8A3F /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				77F0701021FA59C500BE8A3F /* EntryTableViewCell.swift */,
 				77F0701221FA5C0B00BE8A3F /* EntryDetailViewController.swift */,
 				77F0701421FA5CF100BE8A3F /* Entry.swift */,
+				77F0701621FA5DDB00BE8A3F /* EntryController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F0701721FA5DDB00BE8A3F /* EntryController.swift in Sources */,
 				77F0701521FA5CF100BE8A3F /* Entry.swift in Sources */,
 				77F0701121FA59C500BE8A3F /* EntryTableViewCell.swift in Sources */,
 				77F0700F21FA59B700BE8A3F /* EntriesTableViewController.swift in Sources */,
