@@ -51,6 +51,15 @@ class EntryController {
         
     }
     
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else {return}
+        
+        entries.remove(at: index)
+        
+        //how to delete the table view cell inside of the completion closure
+        
+    }
+    
     func update(withEntry entry: Entry, andTitle title: String, andBody bodyText: String, completion: @escaping (Error?) -> Void) {
         guard let index = entries.index(of: entry) else { return }
         entries[index].title = title
