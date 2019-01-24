@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Entry: Codable, Equatable {
+class Entry: Codable, Equatable {
+    
     var title: String
     var bodyText: String
     var timestamp: Date
@@ -19,5 +20,9 @@ struct Entry: Codable, Equatable {
         self.bodyText = bodyText
         self.timestamp = timestamp
         self.identifier = identifier
+    }
+    
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.title == rhs.title && lhs.bodyText == rhs.bodyText && lhs.identifier == rhs.identifier && lhs.timestamp == rhs.timestamp
     }
 }

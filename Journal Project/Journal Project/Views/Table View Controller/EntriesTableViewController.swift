@@ -13,6 +13,13 @@ class EntriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let entryController = EntryController()
+        
+        entryController.createEntry(with: "ahadfh", bodyText: "adfsdf") { (error) in
+            if let error = error {
+                print("did not show up on firebase: \(error.localizedDescription)")
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
