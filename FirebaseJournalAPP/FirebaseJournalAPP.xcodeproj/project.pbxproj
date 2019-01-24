@@ -14,6 +14,7 @@
 		7A57ED5821FA09C500B31E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A57ED5621FA09C500B31E2D /* LaunchScreen.storyboard */; };
 		7A57ED6021FA0B6A00B31E2D /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57ED5F21FA0B6A00B31E2D /* EntriesTableViewController.swift */; };
 		7A57ED6221FA0D4500B31E2D /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57ED6121FA0D4500B31E2D /* EntryTableViewCell.swift */; };
+		7A57ED6621FA0F0B00B31E2D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57ED6521FA0F0A00B31E2D /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7A57ED5921FA09C500B31E2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A57ED5F21FA0B6A00B31E2D /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		7A57ED6121FA0D4500B31E2D /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		7A57ED6521FA0F0A00B31E2D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7A57ED4D21FA09C400B31E2D /* AppDelegate.swift */,
+				7A57ED6521FA0F0A00B31E2D /* Entry.swift */,
 				7A57ED6321FA0DD200B31E2D /* View Controllers */,
 				7A57ED6421FA0DDB00B31E2D /* View */,
 				7A57ED5121FA09C400B31E2D /* Main.storyboard */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A57ED6621FA0F0B00B31E2D /* Entry.swift in Sources */,
 				7A57ED6221FA0D4500B31E2D /* EntryTableViewCell.swift in Sources */,
 				7A57ED6021FA0B6A00B31E2D /* EntriesTableViewController.swift in Sources */,
 				7A57ED5021FA09C400B31E2D /* EntryDetailViewController.swift in Sources */,
