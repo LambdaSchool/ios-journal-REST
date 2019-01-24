@@ -23,6 +23,16 @@ class EntryController {
             completion(error)
             return
         }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            self.entries.append(entry)
+            completion(nil)
+        }.resume()
     }
     
 }
