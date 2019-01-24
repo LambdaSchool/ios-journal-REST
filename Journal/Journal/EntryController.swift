@@ -53,10 +53,27 @@ class EntryController {
         }
     }
     
+    func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        guard let entryIndex = entries.index(of: entry) else { return }
+    
+        entries[entryIndex].title = title
+        entries[entryIndex].bodyText = bodyText
+    
+        let updatedEntry = entries[entryIndex]
+        
+        put(entry: updatedEntry) { (error) in
+            completion(error)
+            return
+        }
+    }
+    
     func fetchEntries(completion: @escaping (Error?) -> Void) {
         let url = baseURL.appendingPathExtension("json")
         
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error)
                 completion(error)
@@ -72,8 +89,9 @@ class EntryController {
             let decoder = JSONDecoder()
             
             do {
-                let decodedData = try decoder.decode([Entry].self, from: data)
-                let sortedEntries = decodedData.sorted(by: { $0.timestamp > $1.timestamp })
+                let decodedData = try decoder.decode([String: Entry].self, from: data)
+                let decodedEntries = decodedData.map({ $0.value })
+                let sortedEntries = decodedEntries.sorted(by: { $0.timestamp > $1.timestamp })
                 self.entries = sortedEntries
                 completion(nil)
             } catch {
@@ -82,6 +100,6 @@ class EntryController {
                 return
             }
             
-        }
+        }.resume()
     }
 }

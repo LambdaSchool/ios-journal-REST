@@ -13,6 +13,14 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    // Properties
+    
+    var entry: Entry?
+    var entryController: EntryController?
     
     @IBOutlet weak var entryTitleTextField: UITextField!
     @IBOutlet weak var entryTextView: UITextView!

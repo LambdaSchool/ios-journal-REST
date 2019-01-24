@@ -123,7 +123,11 @@
                         <viewLayoutGuide key="safeArea" id="GI3-wy-4Hl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="37C-gb-sIl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jka-hX-DhV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jka-hX-DhV">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="fgy-KG-2Ha" id="fRw-Ty-ghh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="entryTextView" destination="9We-nf-h8L" id="cIM-jB-Loc"/>
