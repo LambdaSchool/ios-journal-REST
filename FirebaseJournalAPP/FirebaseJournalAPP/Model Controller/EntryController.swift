@@ -17,5 +17,44 @@ class EntryController {
     func put(entry: Entry, completion: @escaping (Error?) -> Void){
       let url = baseURL.appendingPathComponent(entry.identifier)
         let newUrl = url.appendingPathExtension("json")
+        
+        var urlRequest = URLRequest(url: newUrl)
+        urlRequest.httpMethod = HTTPMethods.put.rawValue
+        
+        let encoder = JSONEncoder()
+        
+        do {
+           let entry = try encoder.encode(entry)
+            urlRequest.httpBody = entry
+        } catch {
+            
+                NSLog("Error encoding data: \(error)")
+                completion(error)
+                return
+        }
+        
+        URLSession.shared.dataTask(with: urlRequest) { (_, _, error) in
+            if error != nil {
+                NSLog("Error getting request: \(error!.localizedDescription)")
+                completion(error)
+                return
+            }
+            completion(nil)
+            
+        }.resume()
+    }
+    
+    // MARK: - CRUD
+    
+    // Create an entry
+    func createEntry(with title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        let entry = Entry(title: title, bodyText: bodyText)
+        put(entry: entry) { (error) in
+            if error != nil {
+                NSLog("Error creating entry: \(error!.localizedDescription)")
+                completion(error)
+            }
+            completion(nil)
+        }
     }
 }
