@@ -17,7 +17,15 @@ class EntryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        let entryController = EntryController()
+//        entryController.createEntry(with: "Nelson", bodyText: "Testing Journal") { (error) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            }
+//            
+//            print("SUCCESSFULLY ADDED DATA TO DATABASE")
+//            
+//        }
     }
 
     @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {

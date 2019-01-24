@@ -57,4 +57,20 @@ class EntryController {
             completion(nil)
         }
     }
+    
+    func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else {return}
+        entries[index].title = title
+        entries[index].bodyText = bodyText
+        
+        let updatedEntry = entries[index]
+        
+        put(entry: updatedEntry) { (error) in
+            if error != nil {
+                NSLog("Error updating entry \(error!.localizedDescription)")
+                completion(error)
+            }
+            completion(nil)
+        }
+    }
 }
