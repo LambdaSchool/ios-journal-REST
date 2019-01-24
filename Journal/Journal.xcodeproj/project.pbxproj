@@ -72,8 +72,8 @@
 		486CFF7121FA59E900A32DEB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				486CFF6121FA571E00A32DEB /* EntryDetailViewController.swift */,
 				486CFF7221FA5A1100A32DEB /* EntriesTableViewController.swift */,
+				486CFF6121FA571E00A32DEB /* EntryDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
