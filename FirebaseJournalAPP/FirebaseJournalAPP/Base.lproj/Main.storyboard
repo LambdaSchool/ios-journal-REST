@@ -30,16 +30,16 @@
                                             <rect key="frame" x="30" y="16" width="354" height="45"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-q1-U0Z">
-                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="16.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Journal Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVT-AK-n7y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-nG-XTJ">
-                                                            <rect key="frame" x="234" y="0.0" width="120" height="16.5"/>
+                                                            <rect key="frame" x="234" y="0.0" width="120" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="TJE-KQ-R3e"/>
                                                             </constraints>
@@ -50,8 +50,8 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-82-xT9">
-                                                    <rect key="frame" x="0.0" y="24.5" width="354" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="28.5" width="354" height="16.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -142,7 +142,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="nDj-gq-30l">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tVB-pC-SfW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tVB-pC-SfW">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="BYZ-38-t0r" id="9Nr-xT-R1o"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="IhU-gG-uyc" id="zhm-ke-mdQ"/>

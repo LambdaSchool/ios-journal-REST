@@ -59,15 +59,15 @@ class EntryController {
     }
     
     func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void){
-        guard let index = entries.index(of: entry) else {return}
-        let entryToDelete = self.entries.remove(at: index)
-        delete(entry: entryToDelete) { (error) in
+        delete(entry: entry) { (error) in
             if error != nil {
                 NSLog("Error deleting entry from table: \(error!.localizedDescription)")
                 completion(error)
             }
-            completion(nil)
+            guard let index = self.entries.index(of: entry) else { return }
+            self.entries.remove(at: index)
         }
+        completion(nil)
     }
     
     func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
@@ -141,7 +141,7 @@ class EntryController {
                 let decodedEntries = try decoder.decode([String: Entry].self, from: data)
                 //get each [Entry] values
                 let values = decodedEntries.map{ $0.value }
-                let theSortedValues = values.sorted(by: { ($0.timestamp < $1.timestamp)})
+                let theSortedValues = values.sorted(by: { ($0.timestamp > $1.timestamp)})
                 self.entries = theSortedValues
                 completion(nil)
             } catch {

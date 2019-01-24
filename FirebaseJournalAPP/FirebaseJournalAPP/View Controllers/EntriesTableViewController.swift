@@ -53,6 +53,7 @@ class EntriesTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             let entry = entryController.entries[indexPath.row]
+            
             entryController.deleteEntry(entry: entry) { (error) in
                 if error != nil {
                     print(error!.localizedDescription)
@@ -66,9 +67,7 @@ class EntriesTableViewController: UITableViewController {
             
         }
     }
- 
 
-   
 
     // MARK: - Navigation
 
@@ -76,6 +75,17 @@ class EntriesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "toEntryVC" {
+            let destinationVC = segue.destination as? EntryDetailViewController
+            destinationVC?.entryController = entryController
+        } else if segue.identifier == "updateEntry" {
+            let destinationVC = segue.destination as? EntryDetailViewController
+            destinationVC?.entryController = entryController
+            
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let entry = entryController.entries[indexPath.row]
+            destinationVC?.entry = entry
+        }
     }
    
 

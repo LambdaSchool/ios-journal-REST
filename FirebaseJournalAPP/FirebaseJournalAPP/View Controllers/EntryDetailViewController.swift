@@ -14,23 +14,59 @@ class EntryDetailViewController: UIViewController {
     
     @IBOutlet weak var bodyTextView: UITextView!
     
-    var entry: Entry?
     var entryController: EntryController?
+    
+    var entry: Entry? {
+        didSet {
+            updateViews()
+        }
+    }
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let entryController = EntryController()
-//        entryController.createEntry(with: "Nelson", bodyText: "Testing Journal") { (error) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            }
-//            
-//            print("SUCCESSFULLY ADDED DATA TO DATABASE")
-//            
-//        }
+            updateViews()
+    }
+    
+    func updateViews() {
+        if isViewLoaded {
+            guard let entry = entry else {
+                title = "Create Entry"
+                
+                return
+            }
+            title = entry.title
+            titleTextField.text = entry.title
+            bodyTextView.text = entry.bodyText
+        }
     }
 
     @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {
+        
+        guard let titleText = titleTextField.text, !titleText.isEmpty, let bodyText = bodyTextView.text, !bodyText.isEmpty else {return}
+        
+        if let entry = entry {
+            entryController?.update(entry: entry, title: titleText, bodyText: bodyText, completion: { (error) in
+                if error != nil {
+                    print("Error updating journal in entry detail VC \(error!.localizedDescription)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        } else {
+            entryController?.createEntry(with: titleText, bodyText: bodyText, completion: { (error) in
+                if error != nil {
+                    print("Error creating entry in entry detail VC \(error!.localizedDescription)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+            
+        }
     }
     
 }
