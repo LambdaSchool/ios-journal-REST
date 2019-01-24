@@ -14,6 +14,7 @@
 		486CFF6A21FA572000A32DEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486CFF6821FA572000A32DEB /* LaunchScreen.storyboard */; };
 		486CFF7321FA5A1100A32DEB /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7221FA5A1100A32DEB /* EntriesTableViewController.swift */; };
 		486CFF7521FA5A4C00A32DEB /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */; };
+		486CFF7721FA610600A32DEB /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFF7621FA610600A32DEB /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		486CFF6B21FA572000A32DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		486CFF7221FA5A1100A32DEB /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		486CFF7621FA610600A32DEB /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				486CFF5F21FA571E00A32DEB /* AppDelegate.swift */,
+				486CFF7621FA610600A32DEB /* Entry.swift */,
 				486CFF7421FA5A4C00A32DEB /* EntryTableViewCell.swift */,
 				486CFF7121FA59E900A32DEB /* Controllers */,
 				486CFF6321FA571E00A32DEB /* Main.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486CFF7721FA610600A32DEB /* Entry.swift in Sources */,
 				486CFF7521FA5A4C00A32DEB /* EntryTableViewCell.swift in Sources */,
 				486CFF7321FA5A1100A32DEB /* EntriesTableViewController.swift in Sources */,
 				486CFF6221FA571E00A32DEB /* EntryDetailViewController.swift in Sources */,
