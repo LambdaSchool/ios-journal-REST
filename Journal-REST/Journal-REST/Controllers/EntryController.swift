@@ -13,4 +13,7 @@ class EntryController {
     
     
     
+    // MARK: - Properties
+    
+    private(set) var entries: [Entry] = []
 }

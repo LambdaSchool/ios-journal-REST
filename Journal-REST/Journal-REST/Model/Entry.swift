@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct Entry: Codable {
+struct Entry: Codable, Equatable {
     
+    var title: String
+    var bodyText: String
+    let timestamp: Date
+    let identifier: String
     
+    init(title: String, bodyText: String, timestamp: Date = Date(), identifier: String = UUID().uuidString) {
+        (self.title, self.bodyText, self.timestamp, self.identifier) = (title, bodyText, timestamp, identifier)
+    }
 }
