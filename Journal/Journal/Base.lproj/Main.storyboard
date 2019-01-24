@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="0Ld-MW-Yct" id="04G-Q8-Rtn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Journal" id="RYo-a9-58d"/>
+                    <navigationItem key="navigationItem" title="Journal" id="RYo-a9-58d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Mu-K1-uha">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="addSegue" id="aiZ-3m-Iph"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxo-VE-euU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
