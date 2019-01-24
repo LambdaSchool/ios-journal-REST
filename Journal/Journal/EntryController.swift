@@ -14,10 +14,10 @@ class EntryController {
     static var baseURL = URL(string: "https://journal-2869f.firebaseio.com/")!
     
     func put(withEntry entry: Entry, completion: @escaping (Error?) -> Void) {
-        EntryController.baseURL.appendPathComponent(entry.identifier)
-        EntryController.baseURL.appendPathExtension("json")
+        let url = EntryController.baseURL.appendingPathComponent(entry.identifier)
+        let urlJSON = url.appendingPathExtension("json")
         
-        var urlRequest = URLRequest(url: EntryController.baseURL)
+        var urlRequest = URLRequest(url: urlJSON)
         urlRequest.httpMethod = "PUT"
         
         do {
@@ -51,10 +51,10 @@ class EntryController {
         
     }
     
-    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+    func delete(entry: Entry, completion: @escaping (Entry?) -> Void) {
         guard let index = entries.index(of: entry) else {return}
         
-        entries.remove(at: index)
+        completion(entries.remove(at: index))
         
         //how to delete the table view cell inside of the completion closure
         

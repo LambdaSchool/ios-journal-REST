@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        entryController.createEntry(withTitle: "Test 1", andBody: "Long day") { (error) in
+       /* entryController.createEntry(withTitle: "Test 1", andBody: "Long day") { (error) in
             if let error = error {
                 print(error)
             }
-        }
+        }*/
         
         return true
     }
