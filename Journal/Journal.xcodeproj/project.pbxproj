@@ -14,6 +14,7 @@
 		A2ACCCF421FA7A7B006D6026 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */; };
 		A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */; };
 		A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */; };
+		A2ACCCFB21FA884F006D6026 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCFA21FA884F006D6026 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		A2ACCCFA21FA884F006D6026 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A2ACCCE821FA7662006D6026 /* Assets.xcassets */,
 				A2ACCCEA21FA7662006D6026 /* LaunchScreen.storyboard */,
 				A2ACCCED21FA7662006D6026 /* Info.plist */,
+				A2ACCCFC21FA8853006D6026 /* Models */,
 				A2ACCCF521FA7A7F006D6026 /* Views */,
 			);
 			path = Journal;
@@ -76,6 +79,14 @@
 				A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A2ACCCFC21FA8853006D6026 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2ACCCFA21FA884F006D6026 /* Entry.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2ACCCFB21FA884F006D6026 /* Entry.swift in Sources */,
 				A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */,
 				A2ACCCF421FA7A7B006D6026 /* EntriesTableViewController.swift in Sources */,
 				A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */,
