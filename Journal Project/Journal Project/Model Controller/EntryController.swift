@@ -52,8 +52,50 @@ class EntryController {
     
     func update(entry: Entry, newTitle: String, newBodyText: String, completion: @escaping (Error?)->Void){
         
-        //implement this method like you would any other Update CRUD functions. At the end of the method though, in order to persist the change to the API, call the put method. Again, pass in the newly update entry (local variable inside the function) and pass in the Update functions's completion handler as an argument for the put function's.
+        //implement this method like you would any other Update CRUD functions.
         entry.title = newTitle
         entry.bodyText = newBodyText
+        
+//        At the end of the method though, in order to persist the change to the API, call the put method. Again, pass in the newly update entry (local variable inside the function) and pass in the Update functions's completion handler as an argument for the put function's.
+        put(an: entry, completion: completion)
+    }
+    
+    func fetchEntries(completion: @escaping (Error?) -> Void){ //the escaping is to let the function know that the closure is finished.
+        
+        //create a url that appends the "json" path extension to the baseURL
+        let url = baseURL.appendingPathExtension("json")
+        
+        //perform a get request to the url using urlsession
+        URLSession.shared.dataTask(with: url) { (data, _, error) in //this is a fetch function, or a GET http method so we want the data back
+            if let error = error {
+                print("Error fetching the data from the server: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                print("Could not get data back from the fetch function.")
+                completion(NSError())
+                return
+            }
+            
+            //now that we have the data back we need to decode it back into our model object
+            
+            do {
+                let jd = JSONDecoder()
+                //decode the entries
+                let decodeDictionary = try jd.decode([String: Entry].self, from: data) //remember JSon is a dictionary
+                
+                //get the values (entries) from the dictionary and sort the entries
+                let returnedEntries = Array(decodeDictionary.values).sorted {$0.title < $1.title}
+                
+                //set the decoded entries in the EntryController's entries property.
+                self.entries = returnedEntries
+            } catch {
+                print("Error trying to decode the data back from the server: \(error.localizedDescription)")
+                completion(error)
+                return
+            }
+        }
     }
 }
