@@ -17,8 +17,7 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0
+        return entryController.entries.count
     }
 
     let reuseIdentifier = "EntryCell"
@@ -26,7 +25,11 @@ class EntriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EntryTableViewCell
 
-        // Configure the cell...
+        let entry = entryController.entries[indexPath.row]
+        
+        cell.titleLabel.text = entry.title
+        cell.bodyLabel.text = entry.bodyText
+        cell.timestampLabel.text = "\(entry.timestamp)"
 
         return cell
     }
@@ -57,5 +60,5 @@ class EntriesTableViewController: UITableViewController {
 
     // MARK: - Properties
     
-    
+    let entryController = EntryController()
 }

@@ -10,9 +10,17 @@ import UIKit
 
 class EntryTableViewCell: UITableViewCell {
 
-   
+    private func updateViews() {
+        
+    }
     
     // MARK: - Properties
+    
+    var entry: Entry? {
+        didSet {
+            updateViews()
+        }
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
