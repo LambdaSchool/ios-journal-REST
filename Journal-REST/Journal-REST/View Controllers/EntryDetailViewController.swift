@@ -45,10 +45,10 @@ class EntryDetailViewController: UIViewController {
     
     private func updateViews() {
         if isViewLoaded {
-            
-            title = "Create Entry"
-            
-            guard let entry = entry else { return }
+            guard let entry = entry else {
+                title = "Create Entry"
+                return
+            }
             
             title = entry.title
             titleTextField.text = entry.title

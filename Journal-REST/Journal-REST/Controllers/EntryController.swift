@@ -74,7 +74,7 @@ class EntryController {
                 do {
                     let entriesDicrtionary = try jsonDecoder.decode([String: Entry].self, from: data)
                     let entries = entriesDicrtionary.map { $0.value }
-                    self.entries = entries
+                    self.entries = entries.sorted(by: { $0.timestamp > $1.timestamp})
                     completion(nil)
                 } catch {
                     NSLog("could not decode data.")
