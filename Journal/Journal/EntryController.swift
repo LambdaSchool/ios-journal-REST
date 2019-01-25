@@ -35,12 +35,48 @@ class EntryController {
         }.resume()
     }
     
-    func createEntry(title: String, bodyText: String, timestamp: Date, identifier: String, completion: @escaping(Error?) -> Void) {
+    func createEntry(title: String, bodyText: String, completion: @escaping(Error?) -> Void) {
+        let entry = Entry(title: title, bodyText: bodyText)
+        put(entry: entry, completion: completion)
         
-        let entry = Entry(title: title, bodyText: bodyText, timestamp: Date, identifier: identifier)
+    }
+    
+    func updateEntry(entry: Entry, title: String, bodyText: String, completion: @escaping(Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        entries[index].title = title
+        entries[index].bodyText = bodyText
+        put(entry: entry, completion: completion)
+
+    }
+    
+    func fetchEntries(completion: @escaping(Error?) -> Void) {
+        let url = baseURL.appendingPathExtension("json")
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
         
-        put(entry: entry) { (error) in
-            completion(error)
-        }
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                let decodeDictionary = try jsonDecoder.decode([String: Entry].self, from: data)
+                let entries = decodeDictionary.sorted(by: timestamp)
+                self.entries = entries
+                completion(nil)
+            } catch {
+                print("Error decoding received data: \(error)")
+                completion(error)
+                return
+            }
+        }.resume()
     }
 }

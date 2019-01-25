@@ -114,8 +114,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-jT-TtP">
-                                <rect key="frame" x="20" y="136" width="335" height="360"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-jT-TtP">
+                                <rect key="frame" x="20" y="146" width="335" height="360"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tv-b5-cfr">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -139,6 +139,7 @@
                         <constraints>
                             <constraint firstItem="0Lb-jT-TtP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DtS-nN-SPq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Lb-jT-TtP" secondAttribute="trailing" constant="20" id="ao3-hP-ysr"/>
+                            <constraint firstItem="0Lb-jT-TtP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="wGw-xa-KuZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

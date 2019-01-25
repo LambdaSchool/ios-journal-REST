@@ -8,7 +8,7 @@ struct Entry: Equatable, Codable {
     var timestamp: Date
     var identifier: String
     
-    init(title: String, bodyText: String, timestamp: Date = Date(), identifier: String) {
+    init(title: String, bodyText: String, timestamp: Date = Date(), identifier: String = UUID().uuidString) {
         self.title = title
         self.bodyText = bodyText
         self.timestamp = timestamp
