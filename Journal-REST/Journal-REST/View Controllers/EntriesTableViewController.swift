@@ -10,8 +10,18 @@ import UIKit
 
 class EntriesTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        entryController.fetchEntries { (error) in
+            if let error = error {
+                NSLog("Could not fetch data: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -26,10 +36,7 @@ class EntriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EntryTableViewCell
 
         let entry = entryController.entries[indexPath.row]
-        
-        cell.titleLabel.text = entry.title
-        cell.bodyLabel.text = entry.bodyText
-        cell.timestampLabel.text = "\(entry.timestamp)"
+        cell.entry = entry
 
         return cell
     }
@@ -48,13 +55,16 @@ class EntriesTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreateEntry" {
+            guard let destination = segue.destination as? EntryDetailViewController else { return }
             
-            
+            destination.entryController = entryController
             
         } else if segue.identifier == "EntryDetail" {
+            guard let destination = segue.destination as? EntryDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            
-            
+            destination.entryController = entryController
+            destination.entry = entryController.entries[indexPath.row]
         }
     }
 

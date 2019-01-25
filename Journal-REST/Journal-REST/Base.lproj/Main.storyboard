@@ -18,7 +18,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hyf-zc-jyL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.67762139379999997" green="0.94358558770000001" blue="1" alpha="0.54007919520000003" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.92051905389999999" green="0.86463487149999996" blue="0.75684595109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="65" id="ed5-Fc-t4c" customClass="EntryTableViewCell" customModule="Journal_REST" customModuleProvider="target">
@@ -115,7 +115,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.6776213937590847" green="0.94358558765844291" blue="1" alpha="0.54007919520547942" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.81450353016680099" green="0.85126979474021869" blue="0.91443924492385786" alpha="0.89873180650684936" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dKH-uh-BTX" firstAttribute="leading" secondItem="qbD-5V-rc1" secondAttribute="leading" constant="8" id="Kqy-gQ-B2e"/>
                             <constraint firstItem="dKH-uh-BTX" firstAttribute="top" secondItem="qbD-5V-rc1" secondAttribute="top" constant="8" id="PWV-iQ-qQ7"/>

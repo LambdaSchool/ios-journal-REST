@@ -11,7 +11,11 @@ import UIKit
 class EntryTableViewCell: UITableViewCell {
 
     private func updateViews() {
+        guard let entry = entry else { return }
         
+        titleLabel.text = entry.title
+        bodyLabel.text = entry.bodyText
+        timestampLabel.text = "\(entry.timestamp)"
     }
     
     // MARK: - Properties
