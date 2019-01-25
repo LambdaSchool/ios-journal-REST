@@ -9,39 +9,49 @@
 import UIKit
 
 class EntriesTableViewController: UITableViewController {
+    
+    let entryController = EntryController()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        entryController.fetchEntries { (error) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let entryController = EntryController()
-        entryController.createEntry(title: "testEntry1", bodyText: "testEntry1Text") { (error) in
-            if let error = error {
-                print(error)
-            }
-            print(entryController.entries)
+//        let entryController = EntryController()
+//        entryController.createEntry(title: "testEntry1", bodyText: "testEntry1Text") { (error) in
+//            if let error = error {
+//                print(error)
+//            }
+//            print(entryController.entries)
             // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
     }
-
     // MARK: - Table view data source
 
 
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        return entryController.entries.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "entrycell", for: indexPath) as! EntryTableViewCell
+        let entry = entryController.entries[indexPath.row]
+        cell.entry = entry
 
         return cell
     }
-    */
+  
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,4 +99,4 @@ class EntriesTableViewController: UITableViewController {
     */
 
 }
-}
+

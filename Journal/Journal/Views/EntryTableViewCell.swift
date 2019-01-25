@@ -9,6 +9,13 @@
 import UIKit
 
 class EntryTableViewCell: UITableViewCell {
+    
+    var entry: Entry? {
+        didSet{
+            // TODO: May have to use DispatchQueue to main here
+            updateViews()
+        }
+    }
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -22,6 +29,15 @@ class EntryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateViews(){
+        guard let entry = entry else { return }
+        nameLabel.text = entry.title
+        entryLabel.text = entry.bodyText
+        let timestamp = entry.timestamp
+        let dateFormatter = DateFormatter()
+        timeLabel.text = dateFormatter.string(from: timestamp)
     }
 
 }
