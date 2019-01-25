@@ -43,6 +43,7 @@ class EntryDetailViewController: UIViewController {
     }
     
     func updateViews() {
+        guard isViewLoaded else { return }
         if let entry = entry {
             navigationItem.title = entry.title
             entryTitleTextField?.text = entry.title
