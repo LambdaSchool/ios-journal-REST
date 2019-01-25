@@ -34,6 +34,9 @@ class EntryTableViewController: UITableViewController {
 
         return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewDataSource, forRowAt indexPath: IndexPath) {
+        <#code#>
+    }
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -44,12 +47,23 @@ class EntryTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-     
+     */
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
+        if segue.identifier == "addSegue" {
+            guard let destination = segue.destination as? EntryDetailViewController else { return }
+            destination.entryController = entryController
+        }
+        
+        if segue.identifier == "cellSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let destination = segue.destination as? EntryDetailViewController else { return }
+            
+            destination.entryController?.entries[indexPath.row]
+            destination.entryController = entryController
+        }
      
     }
-    */
 
 }
