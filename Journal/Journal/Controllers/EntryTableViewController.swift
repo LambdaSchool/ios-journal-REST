@@ -43,13 +43,12 @@ class EntryTableViewController: UITableViewController {
         if segue.identifier == "addSegue" {
             guard let destination = segue.destination as? EntryDetailViewController else { return }
             destination.entryController = entryController
-        }
-        
-        if segue.identifier == "cellSegue" {
+            
+        } else if segue.identifier == "cellSegue" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             guard let destination = segue.destination as? EntryDetailViewController else { return }
-            
-            destination.entryController?.entries[indexPath.row]
+            let entry = entryController.entries[indexPath.row]
+            destination.entry = entry
             destination.entryController = entryController
         }
     }
