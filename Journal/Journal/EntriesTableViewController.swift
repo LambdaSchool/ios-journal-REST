@@ -58,11 +58,14 @@ class EntriesTableViewController: UITableViewController {
         if segue.identifier == "Add" {
             guard let addVC = segue.destination as? EntryDetailViewController else { return }
             addVC.entryController = entryController
-        } else if segue.identifier == "Detail" {
+        }
+        
+        if segue.identifier == "Detail" {
             guard let detailVC = segue.destination as? EntryDetailViewController,
             let index = tableView.indexPathForSelectedRow else { return }
             detailVC.entryController = entryController
-            detailVC.entry = entryController.entries[index.row]
+            let entry = entryController.entries[index.row]
+            detailVC.entry = entry
         }
     }
 
