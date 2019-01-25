@@ -36,6 +36,35 @@ class EntriesTableViewController: UITableViewController {
 
         return entryCell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var entries = entryController.entries
+        
+            entryController.deleteEntry(entry: entries[indexPath.row]) { (error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    entries.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Add" {
+            guard let addVC = segue.destination as? EntryDetailViewController else { return }
+            addVC.entryController = entryController
+        } else if segue.identifier == "Detail" {
+            guard let detailVC = segue.destination as? EntryDetailViewController,
+            let index = tableView.indexPathForSelectedRow else { return }
+            detailVC.entryController = entryController
+            detailVC.entry = entryController.entries[index.row]
+        }
+    }
 
     // Properties
     

@@ -67,6 +67,27 @@ class EntryController {
         }
     }
     
+    func deleteEntry(entry: Entry, completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathComponent(entry.identifier)
+        let jsonURL = url.appendingPathExtension("json")
+        
+        var urlRequest = URLRequest(url: jsonURL)
+        urlRequest.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: urlRequest) { (_, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            DispatchQueue.main.async {
+                guard let entryIndex = self.entries.index(of: entry) else { return }
+                self.entries.remove(at: entryIndex)
+            }
+            completion(nil)
+        }.resume()
+    }
+    
     func fetchEntries(completion: @escaping (Error?) -> Void) {
         let url = baseURL.appendingPathExtension("json")
         
