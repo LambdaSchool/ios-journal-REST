@@ -12,8 +12,13 @@ class EntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
+        let entryController = EntryController()
+        entryController.createEntry(title: "testEntry1", bodyText: "testEntry1Text") { (error) in
+            if let error = error {
+                print(error)
+            }
+            print(entryController.entries)
+            // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -22,12 +27,8 @@ class EntriesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
@@ -87,4 +88,5 @@ class EntriesTableViewController: UITableViewController {
     }
     */
 
+}
 }

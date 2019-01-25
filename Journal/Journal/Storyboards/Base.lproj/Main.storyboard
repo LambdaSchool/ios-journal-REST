@@ -111,16 +111,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uIU-NU-TfD">
-                                <rect key="frame" x="24.5" y="140" width="365" height="361"/>
+                                <rect key="frame" x="8" y="140" width="398" height="361"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zl1-XT-YvW">
-                                        <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qTP-SX-BW5">
-                                        <rect key="frame" x="0.0" y="38" width="365" height="323"/>
+                                        <rect key="frame" x="0.0" y="38" width="398" height="323"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -138,6 +138,8 @@
                         <constraints>
                             <constraint firstItem="uIU-NU-TfD" firstAttribute="centerX" secondItem="rUM-0T-YfD" secondAttribute="centerX" id="4sS-gT-2T8"/>
                             <constraint firstItem="uIU-NU-TfD" firstAttribute="top" secondItem="ZAU-qX-H2z" secondAttribute="top" id="9AR-aT-pIH"/>
+                            <constraint firstItem="uIU-NU-TfD" firstAttribute="leading" secondItem="ZAU-qX-H2z" secondAttribute="leading" constant="8" id="Igb-J5-aQi"/>
+                            <constraint firstItem="ZAU-qX-H2z" firstAttribute="trailing" secondItem="uIU-NU-TfD" secondAttribute="trailing" constant="8" id="YQC-fD-446"/>
                             <constraint firstItem="uIU-NU-TfD" firstAttribute="height" secondItem="ZAU-qX-H2z" secondAttribute="height" multiplier="1/2" id="a5a-Wv-JLV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZAU-qX-H2z"/>

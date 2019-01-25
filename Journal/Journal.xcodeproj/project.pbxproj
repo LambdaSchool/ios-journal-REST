@@ -15,6 +15,9 @@
 		A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */; };
 		A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */; };
 		A2ACCCFB21FA884F006D6026 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ACCCFA21FA884F006D6026 /* Entry.swift */; };
+		A2C69BB521FA8A2E0016AAD5 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C69BB421FA8A2E0016AAD5 /* EntryController.swift */; };
+		A2C69BBA21FA95D10016AAD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C69BB921FA95D10016AAD5 /* ViewController.swift */; };
+		A2C69BBC21FA96070016AAD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C69BBB21FA96070016AAD5 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		A2ACCCFA21FA884F006D6026 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		A2C69BB421FA8A2E0016AAD5 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		A2C69BB921FA95D10016AAD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2C69BBB21FA96070016AAD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 		A2ACCCD521FA7661006D6026 = {
 			isa = PBXGroup;
 			children = (
+				A2C69BBB21FA96070016AAD5 /* Default-568h@2x.png */,
 				A2ACCCE021FA7661006D6026 /* Journal */,
 				A2ACCCDF21FA7661006D6026 /* Products */,
 			);
@@ -60,13 +67,12 @@
 		A2ACCCE021FA7661006D6026 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				A2ACCCE121FA7661006D6026 /* AppDelegate.swift */,
-				A2ACCCE521FA7661006D6026 /* Main.storyboard */,
-				A2ACCCE821FA7662006D6026 /* Assets.xcassets */,
-				A2ACCCEA21FA7662006D6026 /* LaunchScreen.storyboard */,
 				A2ACCCED21FA7662006D6026 /* Info.plist */,
+				A2C69BB821FA95A10016AAD5 /* Resources */,
+				A2C69BB721FA95950016AAD5 /* Storyboards */,
 				A2ACCCFC21FA8853006D6026 /* Models */,
 				A2ACCCF521FA7A7F006D6026 /* Views */,
+				A2C69BB621FA8A340016AAD5 /* Controllers */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -77,6 +83,7 @@
 				A2ACCCF321FA7A7B006D6026 /* EntriesTableViewController.swift */,
 				A2ACCCF621FA8270006D6026 /* EntryTableViewCell.swift */,
 				A2ACCCF821FA878C006D6026 /* EntryDetailViewController.swift */,
+				A2C69BB921FA95D10016AAD5 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -87,6 +94,32 @@
 				A2ACCCFA21FA884F006D6026 /* Entry.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A2C69BB621FA8A340016AAD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2C69BB421FA8A2E0016AAD5 /* EntryController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A2C69BB721FA95950016AAD5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A2ACCCE521FA7661006D6026 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A2C69BB821FA95A10016AAD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2ACCCE121FA7661006D6026 /* AppDelegate.swift */,
+				A2ACCCE821FA7662006D6026 /* Assets.xcassets */,
+				A2ACCCEA21FA7662006D6026 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2ACCCEC21FA7662006D6026 /* LaunchScreen.storyboard in Resources */,
+				A2C69BBC21FA96070016AAD5 /* Default-568h@2x.png in Resources */,
 				A2ACCCE921FA7662006D6026 /* Assets.xcassets in Resources */,
 				A2ACCCE721FA7661006D6026 /* Main.storyboard in Resources */,
 			);
@@ -160,9 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C69BB521FA8A2E0016AAD5 /* EntryController.swift in Sources */,
 				A2ACCCFB21FA884F006D6026 /* Entry.swift in Sources */,
 				A2ACCCF721FA8270006D6026 /* EntryTableViewCell.swift in Sources */,
 				A2ACCCF421FA7A7B006D6026 /* EntriesTableViewController.swift in Sources */,
+				A2C69BBA21FA95D10016AAD5 /* ViewController.swift in Sources */,
 				A2ACCCF921FA878C006D6026 /* EntryDetailViewController.swift in Sources */,
 				A2ACCCE221FA7661006D6026 /* AppDelegate.swift in Sources */,
 			);
