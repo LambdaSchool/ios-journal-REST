@@ -58,7 +58,7 @@ class EntryController {
                 entries[index].title = title
                 entries[index].bodyText = bodyText
                 put(entry: entry, completion: completion)
-                return // may or may not be needed !!!!!!!!!!!!!!!
+                 // may or may not be needed !!!!!!!!!!!!!!!
             }
             index += 1
         }
