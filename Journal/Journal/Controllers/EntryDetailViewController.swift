@@ -7,7 +7,7 @@ class EntryDetailViewController: UIViewController {
     //MARK: Properties
     var entry: Entry? {
         didSet {
-            updateView()
+            updateViews()
         }
     }
     var entryController: EntryController?
@@ -39,11 +39,13 @@ class EntryDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        if isViewLoaded {
-            navigationItem.title = entry?.title
-        } else {
-            navigationItem.title = "CreateEntry"
-    
+        guard isViewLoaded else { return }
+        guard let entry = entry else {
+            title = "Create Entry"
+            return
         }
+        navigationItem.title = entry.title
+        textField.text = entry.title
+        textView.text = entry.bodyText
     }
 }
