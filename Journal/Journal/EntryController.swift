@@ -81,10 +81,9 @@ class EntryController {
         }.resume()
     }
     
-//    func delete(at indexPath: IndexPath, completion: @escaping () -> Void ) {
-//        let entry = entries[indexPath.row]
-//        entries.delete(entry: entry) { success in
-//            guard succes else { return }
-//        }
-//    }
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        guard let index = entries.index(of: entry) else { return }
+        entries.remove(at: index)
+        delete(entry: entry, completion: completion)
+    }
 }

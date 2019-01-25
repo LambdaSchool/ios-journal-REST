@@ -34,12 +34,9 @@ class EntryTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        guard let editingStyle == .delete else { return }
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//    }
-   
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,7 +52,5 @@ class EntryTableViewController: UITableViewController {
             destination.entryController?.entries[indexPath.row]
             destination.entryController = entryController
         }
-     
     }
-
 }
