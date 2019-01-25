@@ -35,9 +35,11 @@ class EntryTableViewCell: UITableViewCell {
         guard let entry = entry else { return }
         nameLabel.text = entry.title
         entryLabel.text = entry.bodyText
-        let timestamp = entry.timestamp
         let dateFormatter = DateFormatter()
-        timeLabel.text = dateFormatter.string(from: timestamp)
+        let time: String = dateFormatter.string(from: entry.timestamp)
+        timeLabel.text = time
+        print("This is the time: \(time)")
+        //TODO: For some reason the date will not convert to a string
     }
 
 }

@@ -16,6 +16,7 @@ class EntriesTableViewController: UITableViewController {
         entryController.fetchEntries { (error) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                print(self.entryController.entries)
             }
         }
     }
