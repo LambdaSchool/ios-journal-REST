@@ -9,7 +9,7 @@
 import UIKit
 
 class EntriesTableViewController: UITableViewController {
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -23,36 +23,44 @@ class EntriesTableViewController: UITableViewController {
             }
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entryController.entries.count
     }
-
+    
     let reuseIdentifier = "EntryCell"
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EntryTableViewCell
-
+        
         let entry = entryController.entries[indexPath.row]
         cell.entry = entry
-
+        
         return cell
     }
-
-    /*
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let entry = entryController.entries[indexPath.row]
+        
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            entryController.delete(entry: entry) { (error) in
+                if let error = error {
+                    NSLog("Could not delete entry: \(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
         }
     }
-    */
+    
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreateEntry" {
             guard let destination = segue.destination as? EntryDetailViewController else { return }
@@ -61,13 +69,13 @@ class EntriesTableViewController: UITableViewController {
             
         } else if segue.identifier == "EntryDetail" {
             guard let destination = segue.destination as? EntryDetailViewController,
-            let indexPath = tableView.indexPathForSelectedRow else { return }
+                let indexPath = tableView.indexPathForSelectedRow else { return }
             
             destination.entryController = entryController
             destination.entry = entryController.entries[indexPath.row]
         }
     }
-
+    
     // MARK: - Properties
     
     let entryController = EntryController()

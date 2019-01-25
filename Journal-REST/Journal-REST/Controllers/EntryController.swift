@@ -12,6 +12,7 @@ let baseURL = URL(string: "https://fir-project-2cfa9.firebaseio.com/")!
 
 enum httpMethod: String {
     case put = "PUT"
+    case delete = "DELETE"
 }
 
 class EntryController {
@@ -47,6 +48,27 @@ class EntryController {
     func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
         let entry = Entry(title: title, bodyText: bodyText)
         put(entry: entry, completion: completion)
+    }
+    
+    func delete(entry: Entry, completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathComponent(entry.identifier)
+            .appendingPathExtension("json")
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod.delete.rawValue
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (_, _, error) in
+            if let error = error {
+                NSLog("error trying to delete data: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let index = self.entries.index(of: entry) else { return }
+            self.entries.remove(at: index)
+            completion(nil)
+        }
+        dataTask.resume()
     }
     
     func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
