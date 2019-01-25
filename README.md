@@ -157,3 +157,4 @@ Before you attempt these, please commit your changes so that you can always reve
 ```
 Navigation Controller Scene -> JournalListTableViewController -> EntriesListTableViewController -> EntryDetailViewController.
 ```
+
