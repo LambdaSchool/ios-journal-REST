@@ -15,21 +15,23 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBAction func save(_ sender: Any) {
-        guard let title = textField.text else { return }
-        guard let bodyText = textView.text else { return }
-        guard let entry = self.entry else { return }
+        guard let title = textField.text, !title.isEmpty,
+        let bodyText = textView.text else { return }
         
-        entryController?.createEntry(title: title, bodyText: bodyText, completion: { (error) in
-            if let error = error {
-                print(error)
-                return
+        if let entry = entry {
+            entryController?.updateEntry(entry: entry, title: title, bodyText: bodyText, completion: { (_) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
             }
-        entryController?.updateEntry(entry: Entry, title: String, bodyText: String, completion: { (error) in
-            guard let index = entries.index(of: entry) else { return }
-            return
-            }
+        })
+        } else {
+        entryController?.createEntry(title: title, bodyText: bodyText, completion: { (_) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
     }
-                
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
