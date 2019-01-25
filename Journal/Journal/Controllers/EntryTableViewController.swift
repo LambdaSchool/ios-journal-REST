@@ -2,7 +2,9 @@
 
 import UIKit
 
-class EntriesTableViewController: UITableViewController {
+class EntryTableViewController: UITableViewController {
+    
+    let entryController = EntryController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,13 +14,15 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return entryController.entries.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as? EntryTableViewCell else { fatalError("Unable to dequeue entry cell") }
 
-        // Configure the cell...
+        let entry = entryController.entries[indexPath.row]
+        cell.titleLabel.text = entry.title
+        cell.storyLabel.text = entry.bodyText
 
         return cell
     }

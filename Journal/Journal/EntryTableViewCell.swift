@@ -18,7 +18,7 @@ class EntryTableViewCell: UITableViewCell {
     
     func updateViews() {
         titleLabel.text = entry?.title
-        timestampLabel. = entry?.timestamp
+        //timestampLabel. = entry?.timestamp
         storyLabel.text = entry?.bodyText
     }
 }
