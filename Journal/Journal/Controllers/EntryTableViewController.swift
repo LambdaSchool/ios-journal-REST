@@ -29,25 +29,17 @@ class EntryTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as? EntryTableViewCell else { fatalError("Unable to dequeue entry cell") }
 
         let entry = entryController.entries[indexPath.row]
-        cell.titleLabel.text = entry.title
-        cell.storyLabel.text = entry.bodyText
+        cell.entry = entry
 
         return cell
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewDataSource, forRowAt indexPath: IndexPath) {
-        <#code#>
-    }
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-     */
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        guard let editingStyle == .delete else { return }
+//            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
+   
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

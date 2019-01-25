@@ -69,8 +69,9 @@ class EntryController {
             
             do {
                 let decodeDictionary = try jsonDecoder.decode([String: Entry].self, from: data)
-                let entries = decodeDictionary.sorted(by: timestamp)
-                self.entries = entries
+                let decodedEntries = Array(decodeDictionary.values)
+                let sortedEntries = decodedEntries.sorted(by: { ($0.timestamp) > ($1.timestamp) } )
+                self.entries = sortedEntries
                 completion(nil)
             } catch {
                 print("Error decoding received data: \(error)")
@@ -79,4 +80,11 @@ class EntryController {
             }
         }.resume()
     }
+    
+//    func delete(at indexPath: IndexPath, completion: @escaping () -> Void ) {
+//        let entry = entries[indexPath.row]
+//        entries.delete(entry: entry) { success in
+//            guard succes else { return }
+//        }
+//    }
 }
