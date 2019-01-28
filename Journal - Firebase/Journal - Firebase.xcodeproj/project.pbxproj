@@ -12,6 +12,8 @@
 		F834D8E021FD489400D65C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D8DE21FD489400D65C06 /* Main.storyboard */; };
 		F834D8E221FD489500D65C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834D8E121FD489500D65C06 /* Assets.xcassets */; };
 		F834D8E521FD489500D65C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D8E321FD489500D65C06 /* LaunchScreen.storyboard */; };
+		F834D8EF21FEF06A00D65C06 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */; };
+		F834D8F221FEF11200D65C06 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		F834D8E121FD489500D65C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F834D8E421FD489500D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F834D8E621FD489500D65C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F834D8ED21FEEF9400D65C06 /* String Tracker.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "String Tracker.md"; sourceTree = "<group>"; };
+		F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				F834D8EC21FD48B900D65C06 /* Set and Forget */,
-				F834D8DC21FD489400D65C06 /* ViewController.swift */,
+				F834D8F021FEF07700D65C06 /* View Controllers */,
 				F834D8DE21FD489400D65C06 /* Main.storyboard */,
+				F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */,
+				F834D8ED21FEEF9400D65C06 /* String Tracker.md */,
 			);
 			path = "Journal - Firebase";
 			sourceTree = "<group>";
@@ -70,6 +77,15 @@
 				F834D8E621FD489500D65C06 /* Info.plist */,
 			);
 			path = "Set and Forget";
+			sourceTree = "<group>";
+		};
+		F834D8F021FEF07700D65C06 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F834D8DC21FD489400D65C06 /* ViewController.swift */,
+				F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834D8F221FEF11200D65C06 /* EntryTableViewCell.swift in Sources */,
+				F834D8EF21FEF06A00D65C06 /* EntriesTableViewController.swift in Sources */,
 				F834D8DD21FD489400D65C06 /* ViewController.swift in Sources */,
 				F834D8DB21FD489400D65C06 /* AppDelegate.swift in Sources */,
 			);
@@ -292,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "Journal - Firebase/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Journal - Firebase/Set and Forget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "Journal - Firebase/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Journal - Firebase/Set and Forget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
