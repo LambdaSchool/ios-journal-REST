@@ -15,6 +15,7 @@
 		F834D8EF21FEF06A00D65C06 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */; };
 		F834D8F221FEF11200D65C06 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */; };
 		F834D8F421FEF49000D65C06 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8F321FEF49000D65C06 /* Entry.swift */; };
+		F834D8F621FEF92A00D65C06 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8F521FEF92A00D65C06 /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		F834D8F321FEF49000D65C06 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		F834D8F521FEF92A00D65C06 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 				F834D8F021FEF07700D65C06 /* View Controllers */,
 				F834D8DE21FD489400D65C06 /* Main.storyboard */,
 				F834D8ED21FEEF9400D65C06 /* String Tracker.md */,
-				F834D8F321FEF49000D65C06 /* Entry.swift */,
+				F834D8F721FEF93600D65C06 /* Model */,
 			);
 			path = "Journal - Firebase";
 			sourceTree = "<group>";
@@ -89,6 +91,15 @@
 				F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F834D8F721FEF93600D65C06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F834D8F321FEF49000D65C06 /* Entry.swift */,
+				F834D8F521FEF92A00D65C06 /* EntryController.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834D8F621FEF92A00D65C06 /* EntryController.swift in Sources */,
 				F834D8F421FEF49000D65C06 /* Entry.swift in Sources */,
 				F834D8F221FEF11200D65C06 /* EntryTableViewCell.swift in Sources */,
 				F834D8EF21FEF06A00D65C06 /* EntriesTableViewController.swift in Sources */,
