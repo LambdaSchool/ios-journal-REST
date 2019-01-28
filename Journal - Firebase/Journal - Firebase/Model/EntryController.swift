@@ -46,6 +46,18 @@ class EntryController {
         
     }
     
-    
+    func update(entry: Entry, title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        
+        guard let index = entries.index(of: entry) else { return }
+        
+        entries[index].title = title
+        
+        entries[index].bodyText = bodyText
+        
+        let updatedEntries = entries[index]
+        
+        put(entry: updatedEntries, completion: completion)
+        
+    }
     
 }
