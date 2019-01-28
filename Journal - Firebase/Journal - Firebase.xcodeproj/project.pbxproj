@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F834D8DB21FD489400D65C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8DA21FD489400D65C06 /* AppDelegate.swift */; };
-		F834D8DD21FD489400D65C06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8DC21FD489400D65C06 /* ViewController.swift */; };
+		F834D8DD21FD489400D65C06 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D8DC21FD489400D65C06 /* EntryDetailViewController.swift */; };
 		F834D8E021FD489400D65C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D8DE21FD489400D65C06 /* Main.storyboard */; };
 		F834D8E221FD489500D65C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834D8E121FD489500D65C06 /* Assets.xcassets */; };
 		F834D8E521FD489500D65C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D8E321FD489500D65C06 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		F834D8D721FD489400D65C06 /* Journal - Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal - Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F834D8DA21FD489400D65C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F834D8DC21FD489400D65C06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F834D8DC21FD489400D65C06 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		F834D8DF21FD489400D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F834D8E121FD489500D65C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F834D8E421FD489500D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,6 @@
 				F834D8EC21FD48B900D65C06 /* Set and Forget */,
 				F834D8F021FEF07700D65C06 /* View Controllers */,
 				F834D8DE21FD489400D65C06 /* Main.storyboard */,
-				F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */,
 				F834D8ED21FEEF9400D65C06 /* String Tracker.md */,
 			);
 			path = "Journal - Firebase";
@@ -82,8 +81,9 @@
 		F834D8F021FEF07700D65C06 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F834D8DC21FD489400D65C06 /* ViewController.swift */,
+				F834D8DC21FD489400D65C06 /* EntryDetailViewController.swift */,
 				F834D8EE21FEF06A00D65C06 /* EntriesTableViewController.swift */,
+				F834D8F121FEF11200D65C06 /* EntryTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			files = (
 				F834D8F221FEF11200D65C06 /* EntryTableViewCell.swift in Sources */,
 				F834D8EF21FEF06A00D65C06 /* EntriesTableViewController.swift in Sources */,
-				F834D8DD21FD489400D65C06 /* ViewController.swift in Sources */,
+				F834D8DD21FD489400D65C06 /* EntryDetailViewController.swift in Sources */,
 				F834D8DB21FD489400D65C06 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
