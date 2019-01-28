@@ -60,4 +60,42 @@ class EntryController {
         
     }
     
+    func fetchEntries(completion: @escaping (Error?) -> Void) {
+        
+        let withJSONURL = baseURL.appendingPathExtension("json")
+        
+        var requestURL = URLRequest(url: withJSONURL)
+        requestURL.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: withJSONURL) { (data, _, error) in
+            
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            
+            do {
+                
+                let decodedEntryData = try decoder.decode([String: Entry].self, from: data)
+                let mappedDecodedEntryData = decodedEntryData.map{ $0.value }
+                let sortEntriesBy = mappedDecodedEntryData.sorted(by: { ($0.timestamp > $1.timestamp) })
+                self.entries = sortEntriesBy
+                completion(nil)
+                
+            } catch {
+                
+                print(error)
+                completion(error)
+                return
+                
+            }
+            
+        }.resume()
+    
+    }
+    
 }
