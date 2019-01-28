@@ -12,7 +12,7 @@ struct Entry: Equatable, Codable {
     // Workflowy handles things as such
     let identifier: String
 
-    init(title: String, bodyText: String, timestamp: Date, identifier: String = UUID().uuidString) {
+    init(title: String, bodyText: String, timestamp: Date = Date(), identifier: String = UUID().uuidString) {
         self.title = title
         self.bodyText = bodyText
         self.timestamp = timestamp

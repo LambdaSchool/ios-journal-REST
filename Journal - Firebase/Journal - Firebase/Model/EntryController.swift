@@ -38,4 +38,14 @@ class EntryController {
 
     }
     
+    func createEntry(title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        
+        let entry = Entry(title: title, bodyText: bodyText)
+        
+        put(entry: entry, completion: completion)
+        
+    }
+    
+    
+    
 }
