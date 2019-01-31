@@ -14,6 +14,15 @@ class EntryController {
     
     let baseURL = URL(string: "https://journal1-66498.firebaseio.com/")!
     
+    func createEntry(with title: String, bodyText: String, completion: @escaping (Error?) -> Void) {
+        
+        //initialize a new entry then pass it to the put function
+        let newEntry = Entry(title: title, bodyText: bodyText)
+        
+        //Where the put method requires a completion closure parameter, put the completion of "createEntry's" in the argument. This will essentially forward the completion clouse to the put method to the caller of createEntry so the potential error can be handled there.
+        put(the: newEntry, completion: completion)
+    }
+    
     func updateEntry(with entry: Entry, newTitle: String, newBodyText: String, completion: @escaping (Error?) -> Void){
         entry.title = newTitle
         entry.bodyText = newBodyText
@@ -22,10 +31,16 @@ class EntryController {
         put(the: entry, completion: completion)
     }
     
+    func delete(entry: Entry){
+        //find the index
+       guard let index = entries.index(of: entry) else { return}
+        entries.remove(at: index)
+    }
+    
     func put(the entry: Entry, completion: @escaping (Error?) -> Void){
         
         let url = baseURL.appendingPathComponent(entry.identifier).appendingPathExtension("json")
-        
+        print(url)
         var requestURL = URLRequest(url: url)
         requestURL.httpMethod = "PUT"
         
@@ -34,7 +49,6 @@ class EntryController {
             
             //put the entry parameter into the body of the httpBody request
             requestURL.httpBody =  try jE.encode(entry)
-            completion(nil)
         } catch  {
             print("Error putting data into the body of the http: \(error.localizedDescription)")
             completion(error)
@@ -47,13 +61,14 @@ class EntryController {
                 completion(error)
                 return
             }
+            print(requestURL)
             completion(nil)
         }.resume()
     }
     
     func fetchEntries(completion: @escaping (Error?) -> Void){
         let url = baseURL.appendingPathExtension("json")
-        
+        print("fetch url: \(url)")
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print("Error fetching Entry from the api: \(error.localizedDescription)")
@@ -62,7 +77,7 @@ class EntryController {
             }
             
             guard let data = data else {
-                completion(nil)
+                completion(NSError())
                 return
             }
             
@@ -76,14 +91,12 @@ class EntryController {
                 //sort the array title < title
                 let sortedEntries = entryArray.sorted(by: { $0.title < $1.title })
                 self.entries = sortedEntries
-                completion(nil)
-                
             } catch {
                 print("Error decoding data: \(error.localizedDescription)")
                 completion(error)
                 return
             }
-        }
+        }.resume()
     }
     
 }

@@ -120,8 +120,16 @@
                         <viewLayoutGuide key="safeArea" id="mel-wt-mcm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="49a-cH-oGm">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="2Z3-ba-f8o"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2Z3-ba-f8o">
+                            <connections>
+                                <action selector="saveEntry:" destination="OBQ-CX-xMY" id="TEn-77-4ue"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="t21-le-Kic" id="pNu-7Y-pM8"/>
+                        <outlet property="textView" destination="Ig3-Nd-VYg" id="HSE-9U-N8H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rd0-QB-bJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

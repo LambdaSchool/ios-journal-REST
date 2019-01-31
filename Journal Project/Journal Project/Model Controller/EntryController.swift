@@ -96,6 +96,6 @@ class EntryController {
                 completion(error)
                 return
             }
-        }
+        }.resume()
     }
 }
